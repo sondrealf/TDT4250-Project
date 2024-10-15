@@ -1,5 +1,8 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/_CDJsVQB)
 
+# Link to main project 
+[GitLab link](https://gitlab.stud.idi.ntnu.no/sandesl/chess2)
+
 # Chess Evolution Ecore Model
 
 This repository contains the Ecore model and related files for the Chess Evolution project, an innovative take on the classic game of chess with enhanced features and variability aspects.
