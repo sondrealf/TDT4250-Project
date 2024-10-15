@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assignment2:Square xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:assignment2="http://www.example.org/assignment2">
+  <gamepiece href="file:/Users/sondrealfnes/eclipse-workspace/Assignment2/instances/GamePiece.xmi#/"/>
+  <position href="file:/Users/sondrealfnes/eclipse-workspace/Assignment2/instances/Position.xmi#/"/>
+</assignment2:Square>

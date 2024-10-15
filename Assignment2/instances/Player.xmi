@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assignment2:Player xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:assignment2="http://www.example.org/assignment2" name="Sondre" eloRating="1200" settings="music:off">
+  <loadout href="file:/Users/sondrealfnes/eclipse-workspace/Assignment2/instances/Loadout.xmi#/"/>
+</assignment2:Player>
