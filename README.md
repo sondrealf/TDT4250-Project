@@ -1,3 +1,19 @@
+# Todos:
+- Lage meta modellen
+     - Lage operations
+     - Lage associations
+     - Lage attributes
+     - Lage constraints
+     - Lage derived properties
+- Utvide modellen
+- Få .editor til å fungere
+- Lage dynamic instances (scripting?) (kanskje ikke)
+
+
+# Utvidelse ideer:
+- Height og width på board
+- Abillities til pieces
+
 # Link to main project 
 
 [GitLab repo](https://gitlab.stud.idi.ntnu.no/sandesl/chess2)
