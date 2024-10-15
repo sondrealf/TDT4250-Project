@@ -10,6 +10,12 @@
 - Lage dynamic instances (scripting?) (kanskje ikke)
 
 
+# Ideer:
+- Abstrakte klasser
+     - Mulig på pieces (at hver brikke kan ha en klasse)
+     - Mulig på loadouts (at hver loadout er en egen klasse)
+     - Mulig på player (at hver spiller har en egen klasse)
+
 # Utvidelse ideer:
 - Height og width på board
 - Abillities til pieces
@@ -19,6 +25,8 @@
 # Andre notes:
 - Ikke sjakk eller sjakkmatt logikk  (vanskelig å autogenerere)
 - Ha en operation som sjekker om kongen eksisterer for å sjekke om gamet er over
+
+
 
 # Link to main project 
 
