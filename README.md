@@ -1,7 +1,10 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/_CDJsVQB)
-
 # Link to main project 
-[GitLab link](https://gitlab.stud.idi.ntnu.no/sandesl/chess2)
+
+[GitLab repo](https://gitlab.stud.idi.ntnu.no/sandesl/chess2)
+
+[Link inside repo to relevant files](https://gitlab.stud.idi.ntnu.no/sandesl/chess2/-/tree/main/core/src/com/mygdx/game/model)
+
+
 
 # Chess Evolution Ecore Model
 
