@@ -13,6 +13,12 @@
 # Utvidelse ideer:
 - Height og width på board
 - Abillities til pieces
+- Flere spillere
+- Spiller kan være med på flere spill samtidig
+
+# Andre notes:
+- Ikke sjakk eller sjakkmatt logikk  (vanskelig å autogenerere)
+- Ha en operation som sjekker om kongen eksisterer for å sjekke om gamet er over
 
 # Link to main project 
 
