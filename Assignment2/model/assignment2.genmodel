@@ -54,6 +54,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Piece/whitekImgUrl"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//Piece/movestrategy"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//Piece/abillity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Piece/isKing"/>
     </genClasses>
     <genClasses image="false" ecoreClass="assignment2.ecore#//GamePiece">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//GamePiece/color"/>
