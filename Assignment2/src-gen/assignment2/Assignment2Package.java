@@ -480,26 +480,6 @@ public interface Assignment2Package extends EPackage {
 	int POSITION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link assignment2.impl.RookImpl <em>Rook</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see assignment2.impl.RookImpl
-	 * @see assignment2.impl.Assignment2PackageImpl#getRook()
-	 * @generated
-	 */
-	int ROOK = 7;
-
-	/**
-	 * The meta object id for the '{@link assignment2.impl.PawnImpl <em>Pawn</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see assignment2.impl.PawnImpl
-	 * @see assignment2.impl.Assignment2PackageImpl#getPawn()
-	 * @generated
-	 */
-	int PAWN = 8;
-
-	/**
 	 * The meta object id for the '{@link assignment2.Piece <em>Piece</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -564,6 +544,16 @@ public interface Assignment2Package extends EPackage {
 	int PIECE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link assignment2.impl.RookImpl <em>Rook</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment2.impl.RookImpl
+	 * @see assignment2.impl.Assignment2PackageImpl#getRook()
+	 * @generated
+	 */
+	int ROOK = 7;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -616,6 +606,16 @@ public interface Assignment2Package extends EPackage {
 	 * @ordered
 	 */
 	int ROOK_OPERATION_COUNT = PIECE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link assignment2.impl.PawnImpl <em>Pawn</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment2.impl.PawnImpl
+	 * @see assignment2.impl.Assignment2PackageImpl#getPawn()
+	 * @generated
+	 */
+	int PAWN = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

@@ -6,6 +6,7 @@ import assignment2.Assignment2Package;
 import assignment2.Rook;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -37,6 +38,7 @@ public class RookImpl extends MinimalEObjectImpl.Container implements Rook {
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -46,6 +48,7 @@ public class RookImpl extends MinimalEObjectImpl.Container implements Rook {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getMoveStrategy() <em>Move Strategy</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -55,6 +58,7 @@ public class RookImpl extends MinimalEObjectImpl.Container implements Rook {
 	 * @ordered
 	 */
 	protected static final Object MOVE_STRATEGY_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getMoveStrategy() <em>Move Strategy</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,6 +68,7 @@ public class RookImpl extends MinimalEObjectImpl.Container implements Rook {
 	 * @ordered
 	 */
 	protected Object moveStrategy = MOVE_STRATEGY_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getBlackImgUrl() <em>Black Img Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,6 +78,7 @@ public class RookImpl extends MinimalEObjectImpl.Container implements Rook {
 	 * @ordered
 	 */
 	protected static final String BLACK_IMG_URL_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getBlackImgUrl() <em>Black Img Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -82,6 +88,7 @@ public class RookImpl extends MinimalEObjectImpl.Container implements Rook {
 	 * @ordered
 	 */
 	protected String blackImgUrl = BLACK_IMG_URL_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getWhitekImgUrl() <em>Whitek Img Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -91,6 +98,7 @@ public class RookImpl extends MinimalEObjectImpl.Container implements Rook {
 	 * @ordered
 	 */
 	protected static final String WHITEK_IMG_URL_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getWhitekImgUrl() <em>Whitek Img Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
