@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class GamePieceImpl extends MinimalEObjectImpl.Container implements GamePiece {
+public abstract class GamePieceImpl extends MinimalEObjectImpl.Container implements GamePiece {
 	/**
 	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc -->

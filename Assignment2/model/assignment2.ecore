@@ -65,16 +65,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Rook"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Pawn"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Piece" abstract="true" interface="true"
-      eSuperTypes="#//Rook #//Pawn #//Medic">
+  <eClassifiers xsi:type="ecore:EClass" name="Rook" eSuperTypes="#//Piece"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Pawn" eSuperTypes="#//Piece"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Piece" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moveStrategy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="blackImgUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="whitekImgUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Medic">
+  <eClassifiers xsi:type="ecore:EClass" name="Medic" eSuperTypes="#//Piece">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="abillity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GamePiece" abstract="true">

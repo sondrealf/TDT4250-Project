@@ -27,23 +27,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link assignment2.impl.SquareImpl#getGamepiece <em>Gamepiece</em>}</li>
  *   <li>{@link assignment2.impl.SquareImpl#getPosition <em>Position</em>}</li>
+ *   <li>{@link assignment2.impl.SquareImpl#getGamepiece <em>Gamepiece</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SquareImpl extends MinimalEObjectImpl.Container implements Square {
-	/**
-	 * The cached value of the '{@link #getGamepiece() <em>Gamepiece</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGamepiece()
-	 * @generated
-	 * @ordered
-	 */
-	protected GamePiece gamepiece;
-
 	/**
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -53,6 +43,16 @@ public class SquareImpl extends MinimalEObjectImpl.Container implements Square {
 	 * @ordered
 	 */
 	protected Position position;
+
+	/**
+	 * The cached value of the '{@link #getGamepiece() <em>Gamepiece</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGamepiece()
+	 * @generated
+	 * @ordered
+	 */
+	protected GamePiece gamepiece;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,48 +71,6 @@ public class SquareImpl extends MinimalEObjectImpl.Container implements Square {
 	@Override
 	protected EClass eStaticClass() {
 		return Assignment2Package.Literals.SQUARE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public GamePiece getGamepiece() {
-		if (gamepiece != null && gamepiece.eIsProxy()) {
-			InternalEObject oldGamepiece = (InternalEObject) gamepiece;
-			gamepiece = (GamePiece) eResolveProxy(oldGamepiece);
-			if (gamepiece != oldGamepiece) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Assignment2Package.SQUARE__GAMEPIECE,
-							oldGamepiece, gamepiece));
-			}
-		}
-		return gamepiece;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GamePiece basicGetGamepiece() {
-		return gamepiece;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setGamepiece(GamePiece newGamepiece) {
-		GamePiece oldGamepiece = gamepiece;
-		gamepiece = newGamepiece;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Assignment2Package.SQUARE__GAMEPIECE, oldGamepiece,
-					gamepiece));
 	}
 
 	/**
@@ -163,6 +121,48 @@ public class SquareImpl extends MinimalEObjectImpl.Container implements Square {
 	 * @generated
 	 */
 	@Override
+	public GamePiece getGamepiece() {
+		if (gamepiece != null && gamepiece.eIsProxy()) {
+			InternalEObject oldGamepiece = (InternalEObject) gamepiece;
+			gamepiece = (GamePiece) eResolveProxy(oldGamepiece);
+			if (gamepiece != oldGamepiece) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Assignment2Package.SQUARE__GAMEPIECE,
+							oldGamepiece, gamepiece));
+			}
+		}
+		return gamepiece;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GamePiece basicGetGamepiece() {
+		return gamepiece;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGamepiece(GamePiece newGamepiece) {
+		GamePiece oldGamepiece = gamepiece;
+		gamepiece = newGamepiece;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Assignment2Package.SQUARE__GAMEPIECE, oldGamepiece,
+					gamepiece));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean isOcupied() {
 		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/assignment2!Square!isOcupied()
 	}
@@ -175,14 +175,14 @@ public class SquareImpl extends MinimalEObjectImpl.Container implements Square {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Assignment2Package.SQUARE__GAMEPIECE:
-			if (resolve)
-				return getGamepiece();
-			return basicGetGamepiece();
 		case Assignment2Package.SQUARE__POSITION:
 			if (resolve)
 				return getPosition();
 			return basicGetPosition();
+		case Assignment2Package.SQUARE__GAMEPIECE:
+			if (resolve)
+				return getGamepiece();
+			return basicGetGamepiece();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,11 +195,11 @@ public class SquareImpl extends MinimalEObjectImpl.Container implements Square {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Assignment2Package.SQUARE__GAMEPIECE:
-			setGamepiece((GamePiece) newValue);
-			return;
 		case Assignment2Package.SQUARE__POSITION:
 			setPosition((Position) newValue);
+			return;
+		case Assignment2Package.SQUARE__GAMEPIECE:
+			setGamepiece((GamePiece) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,11 +213,11 @@ public class SquareImpl extends MinimalEObjectImpl.Container implements Square {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Assignment2Package.SQUARE__GAMEPIECE:
-			setGamepiece((GamePiece) null);
-			return;
 		case Assignment2Package.SQUARE__POSITION:
 			setPosition((Position) null);
+			return;
+		case Assignment2Package.SQUARE__GAMEPIECE:
+			setGamepiece((GamePiece) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -231,10 +231,10 @@ public class SquareImpl extends MinimalEObjectImpl.Container implements Square {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Assignment2Package.SQUARE__GAMEPIECE:
-			return gamepiece != null;
 		case Assignment2Package.SQUARE__POSITION:
 			return position != null;
+		case Assignment2Package.SQUARE__GAMEPIECE:
+			return gamepiece != null;
 		}
 		return super.eIsSet(featureID);
 	}

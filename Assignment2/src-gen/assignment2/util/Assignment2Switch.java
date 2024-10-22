@@ -87,13 +87,6 @@ public class Assignment2Switch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Assignment2Package.PIECE: {
-			Piece piece = (Piece) theEObject;
-			T result = casePiece(piece);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case Assignment2Package.LOADOUT: {
 			Loadout loadout = (Loadout) theEObject;
 			T result = caseLoadout(loadout);
@@ -115,16 +108,50 @@ public class Assignment2Switch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Assignment2Package.GAME_PIECE: {
-			GamePiece gamePiece = (GamePiece) theEObject;
-			T result = caseGamePiece(gamePiece);
+		case Assignment2Package.POSITION: {
+			Position position = (Position) theEObject;
+			T result = casePosition(position);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Assignment2Package.POSITION: {
-			Position position = (Position) theEObject;
-			T result = casePosition(position);
+		case Assignment2Package.ROOK: {
+			Rook rook = (Rook) theEObject;
+			T result = caseRook(rook);
+			if (result == null)
+				result = casePiece(rook);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Assignment2Package.PAWN: {
+			Pawn pawn = (Pawn) theEObject;
+			T result = casePawn(pawn);
+			if (result == null)
+				result = casePiece(pawn);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Assignment2Package.PIECE: {
+			Piece piece = (Piece) theEObject;
+			T result = casePiece(piece);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Assignment2Package.MEDIC: {
+			Medic medic = (Medic) theEObject;
+			T result = caseMedic(medic);
+			if (result == null)
+				result = casePiece(medic);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Assignment2Package.GAME_PIECE: {
+			GamePiece gamePiece = (GamePiece) theEObject;
+			T result = caseGamePiece(gamePiece);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -180,21 +207,6 @@ public class Assignment2Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Piece</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Piece</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePiece(Piece object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Loadout</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -240,21 +252,6 @@ public class Assignment2Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Game Piece</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Game Piece</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGamePiece(GamePiece object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Position</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -266,6 +263,81 @@ public class Assignment2Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePosition(Position object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rook</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rook</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRook(Rook object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pawn</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pawn</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePawn(Pawn object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Piece</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Piece</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePiece(Piece object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medic</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medic</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedic(Medic object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Game Piece</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Game Piece</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGamePiece(GamePiece object) {
 		return null;
 	}
 

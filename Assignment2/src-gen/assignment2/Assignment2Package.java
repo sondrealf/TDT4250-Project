@@ -287,52 +287,6 @@ public interface Assignment2Package extends EPackage {
 	int BOARD_OPERATION_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link assignment2.impl.PieceImpl <em>Piece</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see assignment2.impl.PieceImpl
-	 * @see assignment2.impl.Assignment2PackageImpl#getPiece()
-	 * @generated
-	 */
-	int PIECE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIECE__TYPE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIECE__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Piece</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIECE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Piece</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIECE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link assignment2.impl.LoadoutImpl <em>Loadout</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,7 +294,7 @@ public interface Assignment2Package extends EPackage {
 	 * @see assignment2.impl.Assignment2PackageImpl#getLoadout()
 	 * @generated
 	 */
-	int LOADOUT = 4;
+	int LOADOUT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -386,7 +340,7 @@ public interface Assignment2Package extends EPackage {
 	 * @see assignment2.impl.Assignment2PackageImpl#getLeaderboard()
 	 * @generated
 	 */
-	int LEADERBOARD = 5;
+	int LEADERBOARD = 4;
 
 	/**
 	 * The feature id for the '<em><b>Player</b></em>' reference list.
@@ -432,16 +386,7 @@ public interface Assignment2Package extends EPackage {
 	 * @see assignment2.impl.Assignment2PackageImpl#getSquare()
 	 * @generated
 	 */
-	int SQUARE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Gamepiece</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SQUARE__GAMEPIECE = 0;
+	int SQUARE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Position</b></em>' reference.
@@ -450,7 +395,16 @@ public interface Assignment2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQUARE__POSITION = 1;
+	int SQUARE__POSITION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Gamepiece</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SQUARE__GAMEPIECE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Square</em>' class.
@@ -480,52 +434,6 @@ public interface Assignment2Package extends EPackage {
 	int SQUARE_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link assignment2.impl.GamePieceImpl <em>Game Piece</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see assignment2.impl.GamePieceImpl
-	 * @see assignment2.impl.Assignment2PackageImpl#getGamePiece()
-	 * @generated
-	 */
-	int GAME_PIECE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Color</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_PIECE__COLOR = 0;
-
-	/**
-	 * The feature id for the '<em><b>Piece</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_PIECE__PIECE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Game Piece</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_PIECE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Game Piece</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_PIECE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link assignment2.impl.PositionImpl <em>Position</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -533,7 +441,7 @@ public interface Assignment2Package extends EPackage {
 	 * @see assignment2.impl.Assignment2PackageImpl#getPosition()
 	 * @generated
 	 */
-	int POSITION = 8;
+	int POSITION = 6;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -570,6 +478,317 @@ public interface Assignment2Package extends EPackage {
 	 * @ordered
 	 */
 	int POSITION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link assignment2.impl.RookImpl <em>Rook</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment2.impl.RookImpl
+	 * @see assignment2.impl.Assignment2PackageImpl#getRook()
+	 * @generated
+	 */
+	int ROOK = 7;
+
+	/**
+	 * The meta object id for the '{@link assignment2.impl.PawnImpl <em>Pawn</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment2.impl.PawnImpl
+	 * @see assignment2.impl.Assignment2PackageImpl#getPawn()
+	 * @generated
+	 */
+	int PAWN = 8;
+
+	/**
+	 * The meta object id for the '{@link assignment2.Piece <em>Piece</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment2.Piece
+	 * @see assignment2.impl.Assignment2PackageImpl#getPiece()
+	 * @generated
+	 */
+	int PIECE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIECE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Move Strategy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIECE__MOVE_STRATEGY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Black Img Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIECE__BLACK_IMG_URL = 2;
+
+	/**
+	 * The feature id for the '<em><b>Whitek Img Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIECE__WHITEK_IMG_URL = 3;
+
+	/**
+	 * The number of structural features of the '<em>Piece</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIECE_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Piece</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIECE_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOK__NAME = PIECE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Move Strategy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOK__MOVE_STRATEGY = PIECE__MOVE_STRATEGY;
+
+	/**
+	 * The feature id for the '<em><b>Black Img Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOK__BLACK_IMG_URL = PIECE__BLACK_IMG_URL;
+
+	/**
+	 * The feature id for the '<em><b>Whitek Img Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOK__WHITEK_IMG_URL = PIECE__WHITEK_IMG_URL;
+
+	/**
+	 * The number of structural features of the '<em>Rook</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOK_FEATURE_COUNT = PIECE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Rook</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOK_OPERATION_COUNT = PIECE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAWN__NAME = PIECE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Move Strategy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAWN__MOVE_STRATEGY = PIECE__MOVE_STRATEGY;
+
+	/**
+	 * The feature id for the '<em><b>Black Img Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAWN__BLACK_IMG_URL = PIECE__BLACK_IMG_URL;
+
+	/**
+	 * The feature id for the '<em><b>Whitek Img Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAWN__WHITEK_IMG_URL = PIECE__WHITEK_IMG_URL;
+
+	/**
+	 * The number of structural features of the '<em>Pawn</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAWN_FEATURE_COUNT = PIECE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Pawn</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAWN_OPERATION_COUNT = PIECE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link assignment2.impl.MedicImpl <em>Medic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment2.impl.MedicImpl
+	 * @see assignment2.impl.Assignment2PackageImpl#getMedic()
+	 * @generated
+	 */
+	int MEDIC = 10;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIC__NAME = PIECE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Move Strategy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIC__MOVE_STRATEGY = PIECE__MOVE_STRATEGY;
+
+	/**
+	 * The feature id for the '<em><b>Black Img Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIC__BLACK_IMG_URL = PIECE__BLACK_IMG_URL;
+
+	/**
+	 * The feature id for the '<em><b>Whitek Img Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIC__WHITEK_IMG_URL = PIECE__WHITEK_IMG_URL;
+
+	/**
+	 * The feature id for the '<em><b>Abillity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIC__ABILLITY = PIECE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Medic</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIC_FEATURE_COUNT = PIECE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Medic</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIC_OPERATION_COUNT = PIECE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link assignment2.impl.GamePieceImpl <em>Game Piece</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment2.impl.GamePieceImpl
+	 * @see assignment2.impl.Assignment2PackageImpl#getGamePiece()
+	 * @generated
+	 */
+	int GAME_PIECE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_PIECE__COLOR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Piece</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_PIECE__PIECE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Game Piece</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_PIECE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Game Piece</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_PIECE_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link assignment2.Game <em>Game</em>}'.
@@ -771,38 +990,6 @@ public interface Assignment2Package extends EPackage {
 	EOperation getBoard__MinSize__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for class '{@link assignment2.Piece <em>Piece</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Piece</em>'.
-	 * @see assignment2.Piece
-	 * @generated
-	 */
-	EClass getPiece();
-
-	/**
-	 * Returns the meta object for the attribute '{@link assignment2.Piece#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see assignment2.Piece#getType()
-	 * @see #getPiece()
-	 * @generated
-	 */
-	EAttribute getPiece_Type();
-
-	/**
-	 * Returns the meta object for the attribute '{@link assignment2.Piece#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see assignment2.Piece#getValue()
-	 * @see #getPiece()
-	 * @generated
-	 */
-	EAttribute getPiece_Value();
-
-	/**
 	 * Returns the meta object for class '{@link assignment2.Loadout <em>Loadout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -876,17 +1063,6 @@ public interface Assignment2Package extends EPackage {
 	EClass getSquare();
 
 	/**
-	 * Returns the meta object for the reference '{@link assignment2.Square#getGamepiece <em>Gamepiece</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Gamepiece</em>'.
-	 * @see assignment2.Square#getGamepiece()
-	 * @see #getSquare()
-	 * @generated
-	 */
-	EReference getSquare_Gamepiece();
-
-	/**
 	 * Returns the meta object for the reference '{@link assignment2.Square#getPosition <em>Position</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -898,6 +1074,17 @@ public interface Assignment2Package extends EPackage {
 	EReference getSquare_Position();
 
 	/**
+	 * Returns the meta object for the reference '{@link assignment2.Square#getGamepiece <em>Gamepiece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Gamepiece</em>'.
+	 * @see assignment2.Square#getGamepiece()
+	 * @see #getSquare()
+	 * @generated
+	 */
+	EReference getSquare_Gamepiece();
+
+	/**
 	 * Returns the meta object for the '{@link assignment2.Square#isOcupied() <em>Is Ocupied</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -906,38 +1093,6 @@ public interface Assignment2Package extends EPackage {
 	 * @generated
 	 */
 	EOperation getSquare__IsOcupied();
-
-	/**
-	 * Returns the meta object for class '{@link assignment2.GamePiece <em>Game Piece</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Game Piece</em>'.
-	 * @see assignment2.GamePiece
-	 * @generated
-	 */
-	EClass getGamePiece();
-
-	/**
-	 * Returns the meta object for the attribute '{@link assignment2.GamePiece#getColor <em>Color</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Color</em>'.
-	 * @see assignment2.GamePiece#getColor()
-	 * @see #getGamePiece()
-	 * @generated
-	 */
-	EAttribute getGamePiece_Color();
-
-	/**
-	 * Returns the meta object for the reference '{@link assignment2.GamePiece#getPiece <em>Piece</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Piece</em>'.
-	 * @see assignment2.GamePiece#getPiece()
-	 * @see #getGamePiece()
-	 * @generated
-	 */
-	EReference getGamePiece_Piece();
 
 	/**
 	 * Returns the meta object for class '{@link assignment2.Position <em>Position</em>}'.
@@ -970,6 +1125,133 @@ public interface Assignment2Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPosition_Y();
+
+	/**
+	 * Returns the meta object for class '{@link assignment2.Rook <em>Rook</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rook</em>'.
+	 * @see assignment2.Rook
+	 * @generated
+	 */
+	EClass getRook();
+
+	/**
+	 * Returns the meta object for class '{@link assignment2.Pawn <em>Pawn</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pawn</em>'.
+	 * @see assignment2.Pawn
+	 * @generated
+	 */
+	EClass getPawn();
+
+	/**
+	 * Returns the meta object for class '{@link assignment2.Piece <em>Piece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Piece</em>'.
+	 * @see assignment2.Piece
+	 * @generated
+	 */
+	EClass getPiece();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment2.Piece#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see assignment2.Piece#getName()
+	 * @see #getPiece()
+	 * @generated
+	 */
+	EAttribute getPiece_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment2.Piece#getMoveStrategy <em>Move Strategy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Move Strategy</em>'.
+	 * @see assignment2.Piece#getMoveStrategy()
+	 * @see #getPiece()
+	 * @generated
+	 */
+	EAttribute getPiece_MoveStrategy();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment2.Piece#getBlackImgUrl <em>Black Img Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Black Img Url</em>'.
+	 * @see assignment2.Piece#getBlackImgUrl()
+	 * @see #getPiece()
+	 * @generated
+	 */
+	EAttribute getPiece_BlackImgUrl();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment2.Piece#getWhitekImgUrl <em>Whitek Img Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Whitek Img Url</em>'.
+	 * @see assignment2.Piece#getWhitekImgUrl()
+	 * @see #getPiece()
+	 * @generated
+	 */
+	EAttribute getPiece_WhitekImgUrl();
+
+	/**
+	 * Returns the meta object for class '{@link assignment2.Medic <em>Medic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Medic</em>'.
+	 * @see assignment2.Medic
+	 * @generated
+	 */
+	EClass getMedic();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment2.Medic#getAbillity <em>Abillity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Abillity</em>'.
+	 * @see assignment2.Medic#getAbillity()
+	 * @see #getMedic()
+	 * @generated
+	 */
+	EAttribute getMedic_Abillity();
+
+	/**
+	 * Returns the meta object for class '{@link assignment2.GamePiece <em>Game Piece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Game Piece</em>'.
+	 * @see assignment2.GamePiece
+	 * @generated
+	 */
+	EClass getGamePiece();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment2.GamePiece#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see assignment2.GamePiece#getColor()
+	 * @see #getGamePiece()
+	 * @generated
+	 */
+	EAttribute getGamePiece_Color();
+
+	/**
+	 * Returns the meta object for the reference '{@link assignment2.GamePiece#getPiece <em>Piece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Piece</em>'.
+	 * @see assignment2.GamePiece#getPiece()
+	 * @see #getGamePiece()
+	 * @generated
+	 */
+	EReference getGamePiece_Piece();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1153,32 +1435,6 @@ public interface Assignment2Package extends EPackage {
 		EOperation BOARD___MIN_SIZE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getBoard__MinSize__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link assignment2.impl.PieceImpl <em>Piece</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see assignment2.impl.PieceImpl
-		 * @see assignment2.impl.Assignment2PackageImpl#getPiece()
-		 * @generated
-		 */
-		EClass PIECE = eINSTANCE.getPiece();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PIECE__TYPE = eINSTANCE.getPiece_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PIECE__VALUE = eINSTANCE.getPiece_Value();
-
-		/**
 		 * The meta object literal for the '{@link assignment2.impl.LoadoutImpl <em>Loadout</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1241,14 +1497,6 @@ public interface Assignment2Package extends EPackage {
 		EClass SQUARE = eINSTANCE.getSquare();
 
 		/**
-		 * The meta object literal for the '<em><b>Gamepiece</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SQUARE__GAMEPIECE = eINSTANCE.getSquare_Gamepiece();
-
-		/**
 		 * The meta object literal for the '<em><b>Position</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1257,38 +1505,20 @@ public interface Assignment2Package extends EPackage {
 		EReference SQUARE__POSITION = eINSTANCE.getSquare_Position();
 
 		/**
+		 * The meta object literal for the '<em><b>Gamepiece</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SQUARE__GAMEPIECE = eINSTANCE.getSquare_Gamepiece();
+
+		/**
 		 * The meta object literal for the '<em><b>Is Ocupied</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EOperation SQUARE___IS_OCUPIED = eINSTANCE.getSquare__IsOcupied();
-
-		/**
-		 * The meta object literal for the '{@link assignment2.impl.GamePieceImpl <em>Game Piece</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see assignment2.impl.GamePieceImpl
-		 * @see assignment2.impl.Assignment2PackageImpl#getGamePiece()
-		 * @generated
-		 */
-		EClass GAME_PIECE = eINSTANCE.getGamePiece();
-
-		/**
-		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GAME_PIECE__COLOR = eINSTANCE.getGamePiece_Color();
-
-		/**
-		 * The meta object literal for the '<em><b>Piece</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GAME_PIECE__PIECE = eINSTANCE.getGamePiece_Piece();
 
 		/**
 		 * The meta object literal for the '{@link assignment2.impl.PositionImpl <em>Position</em>}' class.
@@ -1315,6 +1545,112 @@ public interface Assignment2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute POSITION__Y = eINSTANCE.getPosition_Y();
+
+		/**
+		 * The meta object literal for the '{@link assignment2.impl.RookImpl <em>Rook</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see assignment2.impl.RookImpl
+		 * @see assignment2.impl.Assignment2PackageImpl#getRook()
+		 * @generated
+		 */
+		EClass ROOK = eINSTANCE.getRook();
+
+		/**
+		 * The meta object literal for the '{@link assignment2.impl.PawnImpl <em>Pawn</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see assignment2.impl.PawnImpl
+		 * @see assignment2.impl.Assignment2PackageImpl#getPawn()
+		 * @generated
+		 */
+		EClass PAWN = eINSTANCE.getPawn();
+
+		/**
+		 * The meta object literal for the '{@link assignment2.Piece <em>Piece</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see assignment2.Piece
+		 * @see assignment2.impl.Assignment2PackageImpl#getPiece()
+		 * @generated
+		 */
+		EClass PIECE = eINSTANCE.getPiece();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIECE__NAME = eINSTANCE.getPiece_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Move Strategy</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIECE__MOVE_STRATEGY = eINSTANCE.getPiece_MoveStrategy();
+
+		/**
+		 * The meta object literal for the '<em><b>Black Img Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIECE__BLACK_IMG_URL = eINSTANCE.getPiece_BlackImgUrl();
+
+		/**
+		 * The meta object literal for the '<em><b>Whitek Img Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIECE__WHITEK_IMG_URL = eINSTANCE.getPiece_WhitekImgUrl();
+
+		/**
+		 * The meta object literal for the '{@link assignment2.impl.MedicImpl <em>Medic</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see assignment2.impl.MedicImpl
+		 * @see assignment2.impl.Assignment2PackageImpl#getMedic()
+		 * @generated
+		 */
+		EClass MEDIC = eINSTANCE.getMedic();
+
+		/**
+		 * The meta object literal for the '<em><b>Abillity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEDIC__ABILLITY = eINSTANCE.getMedic_Abillity();
+
+		/**
+		 * The meta object literal for the '{@link assignment2.impl.GamePieceImpl <em>Game Piece</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see assignment2.impl.GamePieceImpl
+		 * @see assignment2.impl.Assignment2PackageImpl#getGamePiece()
+		 * @generated
+		 */
+		EClass GAME_PIECE = eINSTANCE.getGamePiece();
+
+		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME_PIECE__COLOR = eINSTANCE.getGamePiece_Color();
+
+		/**
+		 * The meta object literal for the '<em><b>Piece</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GAME_PIECE__PIECE = eINSTANCE.getGamePiece_Piece();
 
 	}
 

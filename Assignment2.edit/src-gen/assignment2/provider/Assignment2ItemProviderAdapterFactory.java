@@ -142,29 +142,6 @@ public class Assignment2ItemProviderAdapterFactory extends Assignment2AdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link assignment2.Piece} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PieceItemProvider pieceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link assignment2.Piece}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPieceAdapter() {
-		if (pieceItemProvider == null) {
-			pieceItemProvider = new PieceItemProvider(this);
-		}
-
-		return pieceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link assignment2.Loadout} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,29 +211,6 @@ public class Assignment2ItemProviderAdapterFactory extends Assignment2AdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link assignment2.GamePiece} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected GamePieceItemProvider gamePieceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link assignment2.GamePiece}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createGamePieceAdapter() {
-		if (gamePieceItemProvider == null) {
-			gamePieceItemProvider = new GamePieceItemProvider(this);
-		}
-
-		return gamePieceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link assignment2.Position} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,6 +231,75 @@ public class Assignment2ItemProviderAdapterFactory extends Assignment2AdapterFac
 		}
 
 		return positionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link assignment2.Rook} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RookItemProvider rookItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link assignment2.Rook}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRookAdapter() {
+		if (rookItemProvider == null) {
+			rookItemProvider = new RookItemProvider(this);
+		}
+
+		return rookItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link assignment2.Pawn} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PawnItemProvider pawnItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link assignment2.Pawn}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPawnAdapter() {
+		if (pawnItemProvider == null) {
+			pawnItemProvider = new PawnItemProvider(this);
+		}
+
+		return pawnItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link assignment2.Medic} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MedicItemProvider medicItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link assignment2.Medic}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMedicAdapter() {
+		if (medicItemProvider == null) {
+			medicItemProvider = new MedicItemProvider(this);
+		}
+
+		return medicItemProvider;
 	}
 
 	/**
@@ -390,18 +413,20 @@ public class Assignment2ItemProviderAdapterFactory extends Assignment2AdapterFac
 			playerItemProvider.dispose();
 		if (boardItemProvider != null)
 			boardItemProvider.dispose();
-		if (pieceItemProvider != null)
-			pieceItemProvider.dispose();
 		if (loadoutItemProvider != null)
 			loadoutItemProvider.dispose();
 		if (leaderboardItemProvider != null)
 			leaderboardItemProvider.dispose();
 		if (squareItemProvider != null)
 			squareItemProvider.dispose();
-		if (gamePieceItemProvider != null)
-			gamePieceItemProvider.dispose();
 		if (positionItemProvider != null)
 			positionItemProvider.dispose();
+		if (rookItemProvider != null)
+			rookItemProvider.dispose();
+		if (pawnItemProvider != null)
+			pawnItemProvider.dispose();
+		if (medicItemProvider != null)
+			medicItemProvider.dispose();
 	}
 
 }

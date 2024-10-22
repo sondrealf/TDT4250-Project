@@ -3,7 +3,7 @@
 package assignment2.provider;
 
 import assignment2.Assignment2Package;
-import assignment2.GamePiece;
+import assignment2.Rook;
 
 import java.util.Collection;
 import java.util.List;
@@ -25,12 +25,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link assignment2.GamePiece} object.
+ * This is the item provider adapter for a {@link assignment2.Rook} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class GamePieceItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class RookItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +38,7 @@ public class GamePieceItemProvider extends ItemProviderAdapter implements IEditi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GamePieceItemProvider(AdapterFactory adapterFactory) {
+	public RookItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,41 +53,86 @@ public class GamePieceItemProvider extends ItemProviderAdapter implements IEditi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addColorPropertyDescriptor(object);
-			addPiecePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addMoveStrategyPropertyDescriptor(object);
+			addBlackImgUrlPropertyDescriptor(object);
+			addWhitekImgUrlPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Color feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addColorPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_GamePiece_color_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_GamePiece_color_feature",
-								"_UI_GamePiece_type"),
-						Assignment2Package.Literals.GAME_PIECE__COLOR, true, false, false,
+						getResourceLocator(), getString("_UI_Piece_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Piece_name_feature", "_UI_Piece_type"),
+						Assignment2Package.Literals.PIECE__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Piece feature.
+	 * This adds a property descriptor for the Move Strategy feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPiecePropertyDescriptor(Object object) {
+	protected void addMoveStrategyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_GamePiece_piece_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_GamePiece_piece_feature",
-								"_UI_GamePiece_type"),
-						Assignment2Package.Literals.GAME_PIECE__PIECE, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Piece_moveStrategy_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Piece_moveStrategy_feature",
+								"_UI_Piece_type"),
+						Assignment2Package.Literals.PIECE__MOVE_STRATEGY, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Black Img Url feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBlackImgUrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Piece_blackImgUrl_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Piece_blackImgUrl_feature",
+								"_UI_Piece_type"),
+						Assignment2Package.Literals.PIECE__BLACK_IMG_URL, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Whitek Img Url feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addWhitekImgUrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Piece_whitekImgUrl_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Piece_whitekImgUrl_feature",
+								"_UI_Piece_type"),
+						Assignment2Package.Literals.PIECE__WHITEK_IMG_URL, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This returns Rook.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Rook"));
 	}
 
 	/**
@@ -108,9 +153,9 @@ public class GamePieceItemProvider extends ItemProviderAdapter implements IEditi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GamePiece) object).getColor();
-		return label == null || label.length() == 0 ? getString("_UI_GamePiece_type")
-				: getString("_UI_GamePiece_type") + " " + label;
+		String label = ((Rook) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Rook_type")
+				: getString("_UI_Rook_type") + " " + label;
 	}
 
 	/**
@@ -124,8 +169,11 @@ public class GamePieceItemProvider extends ItemProviderAdapter implements IEditi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(GamePiece.class)) {
-		case Assignment2Package.GAME_PIECE__COLOR:
+		switch (notification.getFeatureID(Rook.class)) {
+		case Assignment2Package.ROOK__NAME:
+		case Assignment2Package.ROOK__MOVE_STRATEGY:
+		case Assignment2Package.ROOK__BLACK_IMG_URL:
+		case Assignment2Package.ROOK__WHITEK_IMG_URL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

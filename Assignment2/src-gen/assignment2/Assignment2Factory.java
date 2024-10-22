@@ -49,15 +49,6 @@ public interface Assignment2Factory extends EFactory {
 	Board createBoard();
 
 	/**
-	 * Returns a new object of class '<em>Piece</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Piece</em>'.
-	 * @generated
-	 */
-	Piece createPiece();
-
-	/**
 	 * Returns a new object of class '<em>Loadout</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,15 +76,6 @@ public interface Assignment2Factory extends EFactory {
 	Square createSquare();
 
 	/**
-	 * Returns a new object of class '<em>Game Piece</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Game Piece</em>'.
-	 * @generated
-	 */
-	GamePiece createGamePiece();
-
-	/**
 	 * Returns a new object of class '<em>Position</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,6 +83,33 @@ public interface Assignment2Factory extends EFactory {
 	 * @generated
 	 */
 	Position createPosition();
+
+	/**
+	 * Returns a new object of class '<em>Rook</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rook</em>'.
+	 * @generated
+	 */
+	Rook createRook();
+
+	/**
+	 * Returns a new object of class '<em>Pawn</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pawn</em>'.
+	 * @generated
+	 */
+	Pawn createPawn();
+
+	/**
+	 * Returns a new object of class '<em>Medic</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medic</em>'.
+	 * @generated
+	 */
+	Medic createMedic();
 
 	/**
 	 * Returns the package supported by this factory.

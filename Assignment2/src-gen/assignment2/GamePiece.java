@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see assignment2.Assignment2Package#getGamePiece()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface GamePiece extends EObject {

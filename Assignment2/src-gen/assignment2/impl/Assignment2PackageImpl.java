@@ -9,9 +9,12 @@ import assignment2.Game;
 import assignment2.GamePiece;
 import assignment2.Leaderboard;
 import assignment2.Loadout;
+import assignment2.Medic;
+import assignment2.Pawn;
 import assignment2.Piece;
 import assignment2.Player;
 import assignment2.Position;
+import assignment2.Rook;
 import assignment2.Square;
 
 import assignment2.util.Assignment2Validator;
@@ -59,13 +62,6 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pieceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass loadoutEClass = null;
 
 	/**
@@ -87,14 +83,42 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass gamePieceEClass = null;
+	private EClass positionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass positionEClass = null;
+	private EClass rookEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pawnEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pieceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass medicEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass gamePieceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -364,36 +388,6 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	 * @generated
 	 */
 	@Override
-	public EClass getPiece() {
-		return pieceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPiece_Type() {
-		return (EAttribute) pieceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPiece_Value() {
-		return (EAttribute) pieceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getLoadout() {
 		return loadoutEClass;
 	}
@@ -464,7 +458,7 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	 * @generated
 	 */
 	@Override
-	public EReference getSquare_Gamepiece() {
+	public EReference getSquare_Position() {
 		return (EReference) squareEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -474,7 +468,7 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	 * @generated
 	 */
 	@Override
-	public EReference getSquare_Position() {
+	public EReference getSquare_Gamepiece() {
 		return (EReference) squareEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -486,36 +480,6 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	@Override
 	public EOperation getSquare__IsOcupied() {
 		return squareEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getGamePiece() {
-		return gamePieceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getGamePiece_Color() {
-		return (EAttribute) gamePieceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getGamePiece_Piece() {
-		return (EReference) gamePieceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -546,6 +510,126 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	@Override
 	public EAttribute getPosition_Y() {
 		return (EAttribute) positionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRook() {
+		return rookEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPawn() {
+		return pawnEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPiece() {
+		return pieceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPiece_Name() {
+		return (EAttribute) pieceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPiece_MoveStrategy() {
+		return (EAttribute) pieceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPiece_BlackImgUrl() {
+		return (EAttribute) pieceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPiece_WhitekImgUrl() {
+		return (EAttribute) pieceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMedic() {
+		return medicEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMedic_Abillity() {
+		return (EAttribute) medicEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getGamePiece() {
+		return gamePieceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getGamePiece_Color() {
+		return (EAttribute) gamePieceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getGamePiece_Piece() {
+		return (EReference) gamePieceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -600,10 +684,6 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 		createEOperation(boardEClass, BOARD___MOVEPIECE);
 		createEOperation(boardEClass, BOARD___MIN_SIZE__DIAGNOSTICCHAIN_MAP);
 
-		pieceEClass = createEClass(PIECE);
-		createEAttribute(pieceEClass, PIECE__TYPE);
-		createEAttribute(pieceEClass, PIECE__VALUE);
-
 		loadoutEClass = createEClass(LOADOUT);
 		createEAttribute(loadoutEClass, LOADOUT__NAME);
 		createEReference(loadoutEClass, LOADOUT__PIECE);
@@ -613,17 +693,30 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 		createEOperation(leaderboardEClass, LEADERBOARD___LIST_PROFILES);
 
 		squareEClass = createEClass(SQUARE);
-		createEReference(squareEClass, SQUARE__GAMEPIECE);
 		createEReference(squareEClass, SQUARE__POSITION);
+		createEReference(squareEClass, SQUARE__GAMEPIECE);
 		createEOperation(squareEClass, SQUARE___IS_OCUPIED);
-
-		gamePieceEClass = createEClass(GAME_PIECE);
-		createEAttribute(gamePieceEClass, GAME_PIECE__COLOR);
-		createEReference(gamePieceEClass, GAME_PIECE__PIECE);
 
 		positionEClass = createEClass(POSITION);
 		createEAttribute(positionEClass, POSITION__X);
 		createEAttribute(positionEClass, POSITION__Y);
+
+		rookEClass = createEClass(ROOK);
+
+		pawnEClass = createEClass(PAWN);
+
+		pieceEClass = createEClass(PIECE);
+		createEAttribute(pieceEClass, PIECE__NAME);
+		createEAttribute(pieceEClass, PIECE__MOVE_STRATEGY);
+		createEAttribute(pieceEClass, PIECE__BLACK_IMG_URL);
+		createEAttribute(pieceEClass, PIECE__WHITEK_IMG_URL);
+
+		medicEClass = createEClass(MEDIC);
+		createEAttribute(medicEClass, MEDIC__ABILLITY);
+
+		gamePieceEClass = createEClass(GAME_PIECE);
+		createEAttribute(gamePieceEClass, GAME_PIECE__COLOR);
+		createEReference(gamePieceEClass, GAME_PIECE__PIECE);
 	}
 
 	/**
@@ -655,6 +748,9 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		rookEClass.getESuperTypes().add(this.getPiece());
+		pawnEClass.getESuperTypes().add(this.getPiece());
+		medicEClass.getESuperTypes().add(this.getPiece());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(gameEClass, Game.class, "Game", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -717,12 +813,6 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(pieceEClass, Piece.class, "Piece", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPiece_Type(), ecorePackage.getEString(), "type", null, 0, 1, Piece.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPiece_Value(), ecorePackage.getEInt(), "value", null, 1, 1, Piece.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(loadoutEClass, Loadout.class, "Loadout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLoadout_Name(), ecorePackage.getEString(), "name", null, 0, 1, Loadout.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -740,22 +830,14 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 				IS_ORDERED);
 
 		initEClass(squareEClass, Square.class, "Square", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSquare_Gamepiece(), this.getGamePiece(), null, "gamepiece", null, 0, 1, Square.class,
+		initEReference(getSquare_Position(), this.getPosition(), null, "position", null, 1, 1, Square.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSquare_Position(), this.getPosition(), null, "position", null, 1, 1, Square.class,
+		initEReference(getSquare_Gamepiece(), this.getGamePiece(), null, "gamepiece", null, 0, 1, Square.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getSquare__IsOcupied(), ecorePackage.getEBoolean(), "isOcupied", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(gamePieceEClass, GamePiece.class, "GamePiece", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGamePiece_Color(), ecorePackage.getEString(), "color", null, 0, 1, GamePiece.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGamePiece_Piece(), this.getPiece(), null, "piece", null, 1, 1, GamePiece.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 
 		initEClass(positionEClass, Position.class, "Position", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -763,6 +845,32 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPosition_Y(), ecorePackage.getEInt(), "y", null, 1, 1, Position.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rookEClass, Rook.class, "Rook", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(pawnEClass, Pawn.class, "Pawn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(pieceEClass, Piece.class, "Piece", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPiece_Name(), ecorePackage.getEString(), "name", null, 0, 1, Piece.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPiece_MoveStrategy(), ecorePackage.getEJavaObject(), "moveStrategy", null, 0, 1, Piece.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPiece_BlackImgUrl(), ecorePackage.getEString(), "blackImgUrl", null, 0, 1, Piece.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPiece_WhitekImgUrl(), ecorePackage.getEString(), "whitekImgUrl", null, 0, 1, Piece.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(medicEClass, Medic.class, "Medic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMedic_Abillity(), ecorePackage.getEJavaObject(), "abillity", null, 0, 1, Medic.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(gamePieceEClass, GamePiece.class, "GamePiece", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGamePiece_Color(), ecorePackage.getEString(), "color", null, 0, 1, GamePiece.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGamePiece_Piece(), this.getPiece(), null, "piece", null, 1, 1, GamePiece.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

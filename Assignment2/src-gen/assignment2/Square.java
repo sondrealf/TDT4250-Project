@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link assignment2.Square#getGamepiece <em>Gamepiece</em>}</li>
  *   <li>{@link assignment2.Square#getPosition <em>Position</em>}</li>
+ *   <li>{@link assignment2.Square#getGamepiece <em>Gamepiece</em>}</li>
  * </ul>
  *
  * @see assignment2.Assignment2Package#getSquare()
@@ -22,28 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Square extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Gamepiece</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gamepiece</em>' reference.
-	 * @see #setGamepiece(GamePiece)
-	 * @see assignment2.Assignment2Package#getSquare_Gamepiece()
-	 * @model
-	 * @generated
-	 */
-	GamePiece getGamepiece();
-
-	/**
-	 * Sets the value of the '{@link assignment2.Square#getGamepiece <em>Gamepiece</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gamepiece</em>' reference.
-	 * @see #getGamepiece()
-	 * @generated
-	 */
-	void setGamepiece(GamePiece value);
-
 	/**
 	 * Returns the value of the '<em><b>Position</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -65,6 +43,28 @@ public interface Square extends EObject {
 	 * @generated
 	 */
 	void setPosition(Position value);
+
+	/**
+	 * Returns the value of the '<em><b>Gamepiece</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Gamepiece</em>' reference.
+	 * @see #setGamepiece(GamePiece)
+	 * @see assignment2.Assignment2Package#getSquare_Gamepiece()
+	 * @model
+	 * @generated
+	 */
+	GamePiece getGamepiece();
+
+	/**
+	 * Sets the value of the '{@link assignment2.Square#getGamepiece <em>Gamepiece</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Gamepiece</em>' reference.
+	 * @see #getGamepiece()
+	 * @generated
+	 */
+	void setGamepiece(GamePiece value);
 
 	/**
 	 * <!-- begin-user-doc -->

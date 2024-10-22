@@ -82,11 +82,6 @@ public class Assignment2AdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter casePiece(Piece object) {
-			return createPieceAdapter();
-		}
-
-		@Override
 		public Adapter caseLoadout(Loadout object) {
 			return createLoadoutAdapter();
 		}
@@ -102,13 +97,33 @@ public class Assignment2AdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseGamePiece(GamePiece object) {
-			return createGamePieceAdapter();
+		public Adapter casePosition(Position object) {
+			return createPositionAdapter();
 		}
 
 		@Override
-		public Adapter casePosition(Position object) {
-			return createPositionAdapter();
+		public Adapter caseRook(Rook object) {
+			return createRookAdapter();
+		}
+
+		@Override
+		public Adapter casePawn(Pawn object) {
+			return createPawnAdapter();
+		}
+
+		@Override
+		public Adapter casePiece(Piece object) {
+			return createPieceAdapter();
+		}
+
+		@Override
+		public Adapter caseMedic(Medic object) {
+			return createMedicAdapter();
+		}
+
+		@Override
+		public Adapter caseGamePiece(GamePiece object) {
+			return createGamePieceAdapter();
 		}
 
 		@Override
@@ -173,20 +188,6 @@ public class Assignment2AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link assignment2.Piece <em>Piece</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see assignment2.Piece
-	 * @generated
-	 */
-	public Adapter createPieceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link assignment2.Loadout <em>Loadout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -229,20 +230,6 @@ public class Assignment2AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link assignment2.GamePiece <em>Game Piece</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see assignment2.GamePiece
-	 * @generated
-	 */
-	public Adapter createGamePieceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link assignment2.Position <em>Position</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -253,6 +240,76 @@ public class Assignment2AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPositionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link assignment2.Rook <em>Rook</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see assignment2.Rook
+	 * @generated
+	 */
+	public Adapter createRookAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link assignment2.Pawn <em>Pawn</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see assignment2.Pawn
+	 * @generated
+	 */
+	public Adapter createPawnAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link assignment2.Piece <em>Piece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see assignment2.Piece
+	 * @generated
+	 */
+	public Adapter createPieceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link assignment2.Medic <em>Medic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see assignment2.Medic
+	 * @generated
+	 */
+	public Adapter createMedicAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link assignment2.GamePiece <em>Game Piece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see assignment2.GamePiece
+	 * @generated
+	 */
+	public Adapter createGamePieceAdapter() {
 		return null;
 	}
 

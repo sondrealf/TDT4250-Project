@@ -62,18 +62,20 @@ public class Assignment2FactoryImpl extends EFactoryImpl implements Assignment2F
 			return createPlayer();
 		case Assignment2Package.BOARD:
 			return createBoard();
-		case Assignment2Package.PIECE:
-			return createPiece();
 		case Assignment2Package.LOADOUT:
 			return createLoadout();
 		case Assignment2Package.LEADERBOARD:
 			return createLeaderboard();
 		case Assignment2Package.SQUARE:
 			return createSquare();
-		case Assignment2Package.GAME_PIECE:
-			return createGamePiece();
 		case Assignment2Package.POSITION:
 			return createPosition();
+		case Assignment2Package.ROOK:
+			return createRook();
+		case Assignment2Package.PAWN:
+			return createPawn();
+		case Assignment2Package.MEDIC:
+			return createMedic();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -118,17 +120,6 @@ public class Assignment2FactoryImpl extends EFactoryImpl implements Assignment2F
 	 * @generated
 	 */
 	@Override
-	public Piece createPiece() {
-		PieceImpl piece = new PieceImpl();
-		return piece;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Loadout createLoadout() {
 		LoadoutImpl loadout = new LoadoutImpl();
 		return loadout;
@@ -162,9 +153,9 @@ public class Assignment2FactoryImpl extends EFactoryImpl implements Assignment2F
 	 * @generated
 	 */
 	@Override
-	public GamePiece createGamePiece() {
-		GamePieceImpl gamePiece = new GamePieceImpl();
-		return gamePiece;
+	public Position createPosition() {
+		PositionImpl position = new PositionImpl();
+		return position;
 	}
 
 	/**
@@ -173,9 +164,31 @@ public class Assignment2FactoryImpl extends EFactoryImpl implements Assignment2F
 	 * @generated
 	 */
 	@Override
-	public Position createPosition() {
-		PositionImpl position = new PositionImpl();
-		return position;
+	public Rook createRook() {
+		RookImpl rook = new RookImpl();
+		return rook;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Pawn createPawn() {
+		PawnImpl pawn = new PawnImpl();
+		return pawn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Medic createMedic() {
+		MedicImpl medic = new MedicImpl();
+		return medic;
 	}
 
 	/**

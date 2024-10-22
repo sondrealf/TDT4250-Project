@@ -50,25 +50,10 @@ public class SquareItemProvider extends ItemProviderAdapter implements IEditingD
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGamepiecePropertyDescriptor(object);
 			addPositionPropertyDescriptor(object);
+			addGamepiecePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Gamepiece feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGamepiecePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Square_gamepiece_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Square_gamepiece_feature",
-								"_UI_Square_type"),
-						Assignment2Package.Literals.SQUARE__GAMEPIECE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -84,6 +69,21 @@ public class SquareItemProvider extends ItemProviderAdapter implements IEditingD
 						getString("_UI_PropertyDescriptor_description", "_UI_Square_position_feature",
 								"_UI_Square_type"),
 						Assignment2Package.Literals.SQUARE__POSITION, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Gamepiece feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGamepiecePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Square_gamepiece_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Square_gamepiece_feature",
+								"_UI_Square_type"),
+						Assignment2Package.Literals.SQUARE__GAMEPIECE, true, false, true, null, null, null));
 	}
 
 	/**

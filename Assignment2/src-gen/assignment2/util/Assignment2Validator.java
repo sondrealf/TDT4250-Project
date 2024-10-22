@@ -108,18 +108,24 @@ public class Assignment2Validator extends EObjectValidator {
 			return validatePlayer((Player) value, diagnostics, context);
 		case Assignment2Package.BOARD:
 			return validateBoard((Board) value, diagnostics, context);
-		case Assignment2Package.PIECE:
-			return validatePiece((Piece) value, diagnostics, context);
 		case Assignment2Package.LOADOUT:
 			return validateLoadout((Loadout) value, diagnostics, context);
 		case Assignment2Package.LEADERBOARD:
 			return validateLeaderboard((Leaderboard) value, diagnostics, context);
 		case Assignment2Package.SQUARE:
 			return validateSquare((Square) value, diagnostics, context);
-		case Assignment2Package.GAME_PIECE:
-			return validateGamePiece((GamePiece) value, diagnostics, context);
 		case Assignment2Package.POSITION:
 			return validatePosition((Position) value, diagnostics, context);
+		case Assignment2Package.ROOK:
+			return validateRook((Rook) value, diagnostics, context);
+		case Assignment2Package.PAWN:
+			return validatePawn((Pawn) value, diagnostics, context);
+		case Assignment2Package.PIECE:
+			return validatePiece((Piece) value, diagnostics, context);
+		case Assignment2Package.MEDIC:
+			return validateMedic((Medic) value, diagnostics, context);
+		case Assignment2Package.GAME_PIECE:
+			return validateGamePiece((GamePiece) value, diagnostics, context);
 		default:
 			return true;
 		}
@@ -215,15 +221,6 @@ public class Assignment2Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePiece(Piece piece, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(piece, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateLoadout(Loadout loadout, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(loadout, diagnostics, context);
 	}
@@ -252,8 +249,8 @@ public class Assignment2Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateGamePiece(GamePiece gamePiece, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(gamePiece, diagnostics, context);
+	public boolean validatePosition(Position position, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(position, diagnostics, context);
 	}
 
 	/**
@@ -261,8 +258,44 @@ public class Assignment2Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePosition(Position position, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(position, diagnostics, context);
+	public boolean validateRook(Rook rook, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(rook, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePawn(Pawn pawn, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(pawn, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePiece(Piece piece, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(piece, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedic(Medic medic, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(medic, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGamePiece(GamePiece gamePiece, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(gamePiece, diagnostics, context);
 	}
 
 	/**

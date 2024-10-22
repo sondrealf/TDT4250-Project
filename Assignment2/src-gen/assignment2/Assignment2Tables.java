@@ -30,6 +30,7 @@ import org.eclipse.ocl.pivot.internal.library.executor.ExecutorOperation;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorProperty;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorPropertyWithImplementation;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorStandardLibrary;
+import org.eclipse.ocl.pivot.internal.library.executor.ExecutorType;
 import org.eclipse.ocl.pivot.oclstdlib.OCLstdlibTables;
 import org.eclipse.ocl.pivot.utilities.AbstractTables;
 import org.eclipse.ocl.pivot.utilities.TypeUtil;
@@ -73,6 +74,7 @@ public class Assignment2Tables extends AbstractTables
 	public static final /*@NonInvalid*/ ClassId CLSSid_Position = Assignment2Tables.PACKid_http_c_s_s_www_example_org_s_assignment2.getClassId("Position", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Square = Assignment2Tables.PACKid_http_c_s_s_www_example_org_s_assignment2.getClassId("Square", 0);
 	public static final /*@NonInvalid*/ DataTypeId DATAid_EInt = Assignment2Tables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EInt", 0);
+	public static final /*@NonInvalid*/ DataTypeId DATAid_EJavaObject = Assignment2Tables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EJavaObject", 0);
 	public static final /*@NonInvalid*/ IntegerValue INT_0 = ValueUtil.integerValueOf("0");
 	public static final /*@NonInvalid*/ IntegerValue INT_2 = ValueUtil.integerValueOf("2");
 	public static final /*@NonInvalid*/ IntegerValue INT_7 = ValueUtil.integerValueOf("7");
@@ -118,12 +120,15 @@ public class Assignment2Tables extends AbstractTables
 
 		public static final EcoreExecutorType _Board = new EcoreExecutorType(Assignment2Package.Literals.BOARD, PACKAGE, 0);
 		public static final EcoreExecutorType _Game = new EcoreExecutorType(Assignment2Package.Literals.GAME, PACKAGE, 0);
-		public static final EcoreExecutorType _GamePiece = new EcoreExecutorType(Assignment2Package.Literals.GAME_PIECE, PACKAGE, 0);
+		public static final EcoreExecutorType _GamePiece = new EcoreExecutorType(Assignment2Package.Literals.GAME_PIECE, PACKAGE, 0 | ExecutorType.ABSTRACT);
 		public static final EcoreExecutorType _Leaderboard = new EcoreExecutorType(Assignment2Package.Literals.LEADERBOARD, PACKAGE, 0);
 		public static final EcoreExecutorType _Loadout = new EcoreExecutorType(Assignment2Package.Literals.LOADOUT, PACKAGE, 0);
-		public static final EcoreExecutorType _Piece = new EcoreExecutorType(Assignment2Package.Literals.PIECE, PACKAGE, 0);
+		public static final EcoreExecutorType _Medic = new EcoreExecutorType(Assignment2Package.Literals.MEDIC, PACKAGE, 0);
+		public static final EcoreExecutorType _Pawn = new EcoreExecutorType(Assignment2Package.Literals.PAWN, PACKAGE, 0);
+		public static final EcoreExecutorType _Piece = new EcoreExecutorType(Assignment2Package.Literals.PIECE, PACKAGE, 0 | ExecutorType.ABSTRACT);
 		public static final EcoreExecutorType _Player = new EcoreExecutorType(Assignment2Package.Literals.PLAYER, PACKAGE, 0);
 		public static final EcoreExecutorType _Position = new EcoreExecutorType(Assignment2Package.Literals.POSITION, PACKAGE, 0);
+		public static final EcoreExecutorType _Rook = new EcoreExecutorType(Assignment2Package.Literals.ROOK, PACKAGE, 0);
 		public static final EcoreExecutorType _Square = new EcoreExecutorType(Assignment2Package.Literals.SQUARE, PACKAGE, 0);
 
 		private static final EcoreExecutorType /*@NonNull*/ [] types = {
@@ -132,9 +137,12 @@ public class Assignment2Tables extends AbstractTables
 			_GamePiece,
 			_Leaderboard,
 			_Loadout,
+			_Medic,
+			_Pawn,
 			_Piece,
 			_Player,
 			_Position,
+			_Rook,
 			_Square
 		};
 
@@ -181,6 +189,16 @@ public class Assignment2Tables extends AbstractTables
 		private static final ExecutorFragment _Loadout__OclAny = new ExecutorFragment(Types._Loadout, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _Loadout__OclElement = new ExecutorFragment(Types._Loadout, OCLstdlibTables.Types._OclElement);
 
+		private static final ExecutorFragment _Medic__Medic = new ExecutorFragment(Types._Medic, Assignment2Tables.Types._Medic);
+		private static final ExecutorFragment _Medic__OclAny = new ExecutorFragment(Types._Medic, OCLstdlibTables.Types._OclAny);
+		private static final ExecutorFragment _Medic__OclElement = new ExecutorFragment(Types._Medic, OCLstdlibTables.Types._OclElement);
+		private static final ExecutorFragment _Medic__Piece = new ExecutorFragment(Types._Medic, Assignment2Tables.Types._Piece);
+
+		private static final ExecutorFragment _Pawn__OclAny = new ExecutorFragment(Types._Pawn, OCLstdlibTables.Types._OclAny);
+		private static final ExecutorFragment _Pawn__OclElement = new ExecutorFragment(Types._Pawn, OCLstdlibTables.Types._OclElement);
+		private static final ExecutorFragment _Pawn__Pawn = new ExecutorFragment(Types._Pawn, Assignment2Tables.Types._Pawn);
+		private static final ExecutorFragment _Pawn__Piece = new ExecutorFragment(Types._Pawn, Assignment2Tables.Types._Piece);
+
 		private static final ExecutorFragment _Piece__OclAny = new ExecutorFragment(Types._Piece, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _Piece__OclElement = new ExecutorFragment(Types._Piece, OCLstdlibTables.Types._OclElement);
 		private static final ExecutorFragment _Piece__Piece = new ExecutorFragment(Types._Piece, Assignment2Tables.Types._Piece);
@@ -192,6 +210,11 @@ public class Assignment2Tables extends AbstractTables
 		private static final ExecutorFragment _Position__OclAny = new ExecutorFragment(Types._Position, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _Position__OclElement = new ExecutorFragment(Types._Position, OCLstdlibTables.Types._OclElement);
 		private static final ExecutorFragment _Position__Position = new ExecutorFragment(Types._Position, Assignment2Tables.Types._Position);
+
+		private static final ExecutorFragment _Rook__OclAny = new ExecutorFragment(Types._Rook, OCLstdlibTables.Types._OclAny);
+		private static final ExecutorFragment _Rook__OclElement = new ExecutorFragment(Types._Rook, OCLstdlibTables.Types._OclElement);
+		private static final ExecutorFragment _Rook__Piece = new ExecutorFragment(Types._Rook, Assignment2Tables.Types._Piece);
+		private static final ExecutorFragment _Rook__Rook = new ExecutorFragment(Types._Rook, Assignment2Tables.Types._Rook);
 
 		private static final ExecutorFragment _Square__OclAny = new ExecutorFragment(Types._Square, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _Square__OclElement = new ExecutorFragment(Types._Square, OCLstdlibTables.Types._OclElement);
@@ -302,10 +325,14 @@ public class Assignment2Tables extends AbstractTables
 		public static final ExecutorProperty _Loadout__piece = new EcoreExecutorProperty(Assignment2Package.Literals.LOADOUT__PIECE, Types._Loadout, 1);
 		public static final ExecutorProperty _Loadout__Player__loadout = new ExecutorPropertyWithImplementation("Player", Types._Loadout, 2, new EcoreLibraryOppositeProperty(Assignment2Package.Literals.PLAYER__LOADOUT));
 
-		public static final ExecutorProperty _Piece__type = new EcoreExecutorProperty(Assignment2Package.Literals.PIECE__TYPE, Types._Piece, 0);
-		public static final ExecutorProperty _Piece__value = new EcoreExecutorProperty(Assignment2Package.Literals.PIECE__VALUE, Types._Piece, 1);
-		public static final ExecutorProperty _Piece__GamePiece__piece = new ExecutorPropertyWithImplementation("GamePiece", Types._Piece, 2, new EcoreLibraryOppositeProperty(Assignment2Package.Literals.GAME_PIECE__PIECE));
-		public static final ExecutorProperty _Piece__Loadout__piece = new ExecutorPropertyWithImplementation("Loadout", Types._Piece, 3, new EcoreLibraryOppositeProperty(Assignment2Package.Literals.LOADOUT__PIECE));
+		public static final ExecutorProperty _Medic__abillity = new EcoreExecutorProperty(Assignment2Package.Literals.MEDIC__ABILLITY, Types._Medic, 0);
+
+		public static final ExecutorProperty _Piece__blackImgUrl = new EcoreExecutorProperty(Assignment2Package.Literals.PIECE__BLACK_IMG_URL, Types._Piece, 0);
+		public static final ExecutorProperty _Piece__moveStrategy = new EcoreExecutorProperty(Assignment2Package.Literals.PIECE__MOVE_STRATEGY, Types._Piece, 1);
+		public static final ExecutorProperty _Piece__name = new EcoreExecutorProperty(Assignment2Package.Literals.PIECE__NAME, Types._Piece, 2);
+		public static final ExecutorProperty _Piece__whitekImgUrl = new EcoreExecutorProperty(Assignment2Package.Literals.PIECE__WHITEK_IMG_URL, Types._Piece, 3);
+		public static final ExecutorProperty _Piece__GamePiece__piece = new ExecutorPropertyWithImplementation("GamePiece", Types._Piece, 4, new EcoreLibraryOppositeProperty(Assignment2Package.Literals.GAME_PIECE__PIECE));
+		public static final ExecutorProperty _Piece__Loadout__piece = new ExecutorPropertyWithImplementation("Loadout", Types._Piece, 5, new EcoreLibraryOppositeProperty(Assignment2Package.Literals.LOADOUT__PIECE));
 
 		public static final ExecutorProperty _Player__eloRating = new EcoreExecutorProperty(Assignment2Package.Literals.PLAYER__ELO_RATING, Types._Player, 0);
 		public static final ExecutorProperty _Player__loadout = new EcoreExecutorProperty(Assignment2Package.Literals.PLAYER__LOADOUT, Types._Player, 1);
@@ -380,6 +407,24 @@ public class Assignment2Tables extends AbstractTables
 			};
 		private static final int /*@NonNull*/ [] __Loadout = { 1,1,1 };
 
+		private static final ExecutorFragment /*@NonNull*/ [] _Medic =
+			{
+				Fragments._Medic__OclAny /* 0 */,
+				Fragments._Medic__OclElement /* 1 */,
+				Fragments._Medic__Piece /* 2 */,
+				Fragments._Medic__Medic /* 3 */
+			};
+		private static final int /*@NonNull*/ [] __Medic = { 1,1,1,1 };
+
+		private static final ExecutorFragment /*@NonNull*/ [] _Pawn =
+			{
+				Fragments._Pawn__OclAny /* 0 */,
+				Fragments._Pawn__OclElement /* 1 */,
+				Fragments._Pawn__Piece /* 2 */,
+				Fragments._Pawn__Pawn /* 3 */
+			};
+		private static final int /*@NonNull*/ [] __Pawn = { 1,1,1,1 };
+
 		private static final ExecutorFragment /*@NonNull*/ [] _Piece =
 			{
 				Fragments._Piece__OclAny /* 0 */,
@@ -404,6 +449,15 @@ public class Assignment2Tables extends AbstractTables
 			};
 		private static final int /*@NonNull*/ [] __Position = { 1,1,1 };
 
+		private static final ExecutorFragment /*@NonNull*/ [] _Rook =
+			{
+				Fragments._Rook__OclAny /* 0 */,
+				Fragments._Rook__OclElement /* 1 */,
+				Fragments._Rook__Piece /* 2 */,
+				Fragments._Rook__Rook /* 3 */
+			};
+		private static final int /*@NonNull*/ [] __Rook = { 1,1,1,1 };
+
 		private static final ExecutorFragment /*@NonNull*/ [] _Square =
 			{
 				Fragments._Square__OclAny /* 0 */,
@@ -421,9 +475,12 @@ public class Assignment2Tables extends AbstractTables
 			Types._GamePiece.initFragments(_GamePiece, __GamePiece);
 			Types._Leaderboard.initFragments(_Leaderboard, __Leaderboard);
 			Types._Loadout.initFragments(_Loadout, __Loadout);
+			Types._Medic.initFragments(_Medic, __Medic);
+			Types._Pawn.initFragments(_Pawn, __Pawn);
 			Types._Piece.initFragments(_Piece, __Piece);
 			Types._Player.initFragments(_Player, __Player);
 			Types._Position.initFragments(_Position, __Position);
+			Types._Rook.initFragments(_Rook, __Rook);
 			Types._Square.initFragments(_Square, __Square);
 
 			Init.initEnd();
@@ -618,6 +675,74 @@ public class Assignment2Tables extends AbstractTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
+		private static final ExecutorOperation /*@NonNull*/ [] _Medic__Medic = {};
+		private static final ExecutorOperation /*@NonNull*/ [] _Medic__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final ExecutorOperation /*@NonNull*/ [] _Medic__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances(Integer[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclElement__0_oclBase /* oclBase() */,
+			OCLstdlibTables.Operations._OclElement__1_oclBase /* oclBase(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclExtension /* oclExtension(OclStereotype[1]) */,
+			OCLstdlibTables.Operations._OclElement__0_oclExtensions /* oclExtensions() */,
+			OCLstdlibTables.Operations._OclElement__1_oclExtensions /* oclExtensions(OclStereotype[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final ExecutorOperation /*@NonNull*/ [] _Medic__Piece = {};
+
+		private static final ExecutorOperation /*@NonNull*/ [] _Pawn__Pawn = {};
+		private static final ExecutorOperation /*@NonNull*/ [] _Pawn__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final ExecutorOperation /*@NonNull*/ [] _Pawn__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances(Integer[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclElement__0_oclBase /* oclBase() */,
+			OCLstdlibTables.Operations._OclElement__1_oclBase /* oclBase(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclExtension /* oclExtension(OclStereotype[1]) */,
+			OCLstdlibTables.Operations._OclElement__0_oclExtensions /* oclExtensions() */,
+			OCLstdlibTables.Operations._OclElement__1_oclExtensions /* oclExtensions(OclStereotype[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final ExecutorOperation /*@NonNull*/ [] _Pawn__Piece = {};
+
 		private static final ExecutorOperation /*@NonNull*/ [] _Piece__Piece = {};
 		private static final ExecutorOperation /*@NonNull*/ [] _Piece__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -717,6 +842,40 @@ public class Assignment2Tables extends AbstractTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
+		private static final ExecutorOperation /*@NonNull*/ [] _Rook__Rook = {};
+		private static final ExecutorOperation /*@NonNull*/ [] _Rook__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final ExecutorOperation /*@NonNull*/ [] _Rook__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances(Integer[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclElement__0_oclBase /* oclBase() */,
+			OCLstdlibTables.Operations._OclElement__1_oclBase /* oclBase(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclExtension /* oclExtension(OclStereotype[1]) */,
+			OCLstdlibTables.Operations._OclElement__0_oclExtensions /* oclExtensions() */,
+			OCLstdlibTables.Operations._OclElement__1_oclExtensions /* oclExtensions(OclStereotype[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final ExecutorOperation /*@NonNull*/ [] _Rook__Piece = {};
+
 		private static final ExecutorOperation /*@NonNull*/ [] _Square__Square = {
 			Assignment2Tables.Operations._Square__isOcupied /* isOcupied() */
 		};
@@ -776,6 +935,16 @@ public class Assignment2Tables extends AbstractTables
 			Fragments._Loadout__OclAny.initOperations(_Loadout__OclAny);
 			Fragments._Loadout__OclElement.initOperations(_Loadout__OclElement);
 
+			Fragments._Medic__Medic.initOperations(_Medic__Medic);
+			Fragments._Medic__OclAny.initOperations(_Medic__OclAny);
+			Fragments._Medic__OclElement.initOperations(_Medic__OclElement);
+			Fragments._Medic__Piece.initOperations(_Medic__Piece);
+
+			Fragments._Pawn__OclAny.initOperations(_Pawn__OclAny);
+			Fragments._Pawn__OclElement.initOperations(_Pawn__OclElement);
+			Fragments._Pawn__Pawn.initOperations(_Pawn__Pawn);
+			Fragments._Pawn__Piece.initOperations(_Pawn__Piece);
+
 			Fragments._Piece__OclAny.initOperations(_Piece__OclAny);
 			Fragments._Piece__OclElement.initOperations(_Piece__OclElement);
 			Fragments._Piece__Piece.initOperations(_Piece__Piece);
@@ -787,6 +956,11 @@ public class Assignment2Tables extends AbstractTables
 			Fragments._Position__OclAny.initOperations(_Position__OclAny);
 			Fragments._Position__OclElement.initOperations(_Position__OclElement);
 			Fragments._Position__Position.initOperations(_Position__Position);
+
+			Fragments._Rook__OclAny.initOperations(_Rook__OclAny);
+			Fragments._Rook__OclElement.initOperations(_Rook__OclElement);
+			Fragments._Rook__Piece.initOperations(_Rook__Piece);
+			Fragments._Rook__Rook.initOperations(_Rook__Rook);
 
 			Fragments._Square__OclAny.initOperations(_Square__OclAny);
 			Fragments._Square__OclElement.initOperations(_Square__OclElement);
@@ -845,11 +1019,32 @@ public class Assignment2Tables extends AbstractTables
 			Assignment2Tables.Properties._Loadout__piece
 		};
 
-		private static final ExecutorProperty /*@NonNull*/ [] _Piece = {
+		private static final ExecutorProperty /*@NonNull*/ [] _Medic = {
+			Assignment2Tables.Properties._Medic__abillity,
+			Assignment2Tables.Properties._Piece__blackImgUrl,
+			Assignment2Tables.Properties._Piece__moveStrategy,
+			Assignment2Tables.Properties._Piece__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents,
-			Assignment2Tables.Properties._Piece__type,
-			Assignment2Tables.Properties._Piece__value
+			Assignment2Tables.Properties._Piece__whitekImgUrl
+		};
+
+		private static final ExecutorProperty /*@NonNull*/ [] _Pawn = {
+			Assignment2Tables.Properties._Piece__blackImgUrl,
+			Assignment2Tables.Properties._Piece__moveStrategy,
+			Assignment2Tables.Properties._Piece__name,
+			OCLstdlibTables.Properties._OclElement__oclContainer,
+			OCLstdlibTables.Properties._OclElement__oclContents,
+			Assignment2Tables.Properties._Piece__whitekImgUrl
+		};
+
+		private static final ExecutorProperty /*@NonNull*/ [] _Piece = {
+			Assignment2Tables.Properties._Piece__blackImgUrl,
+			Assignment2Tables.Properties._Piece__moveStrategy,
+			Assignment2Tables.Properties._Piece__name,
+			OCLstdlibTables.Properties._OclElement__oclContainer,
+			OCLstdlibTables.Properties._OclElement__oclContents,
+			Assignment2Tables.Properties._Piece__whitekImgUrl
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _Player = {
@@ -868,6 +1063,15 @@ public class Assignment2Tables extends AbstractTables
 			Assignment2Tables.Properties._Position__y
 		};
 
+		private static final ExecutorProperty /*@NonNull*/ [] _Rook = {
+			Assignment2Tables.Properties._Piece__blackImgUrl,
+			Assignment2Tables.Properties._Piece__moveStrategy,
+			Assignment2Tables.Properties._Piece__name,
+			OCLstdlibTables.Properties._OclElement__oclContainer,
+			OCLstdlibTables.Properties._OclElement__oclContents,
+			Assignment2Tables.Properties._Piece__whitekImgUrl
+		};
+
 		private static final ExecutorProperty /*@NonNull*/ [] _Square = {
 			Assignment2Tables.Properties._Square__gamepiece,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
@@ -884,9 +1088,12 @@ public class Assignment2Tables extends AbstractTables
 			Fragments._GamePiece__GamePiece.initProperties(_GamePiece);
 			Fragments._Leaderboard__Leaderboard.initProperties(_Leaderboard);
 			Fragments._Loadout__Loadout.initProperties(_Loadout);
+			Fragments._Medic__Medic.initProperties(_Medic);
+			Fragments._Pawn__Pawn.initProperties(_Pawn);
 			Fragments._Piece__Piece.initProperties(_Piece);
 			Fragments._Player__Player.initProperties(_Player);
 			Fragments._Position__Position.initProperties(_Position);
+			Fragments._Rook__Rook.initProperties(_Rook);
 			Fragments._Square__Square.initProperties(_Square);
 
 			Init.initEnd();
