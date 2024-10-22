@@ -13,11 +13,16 @@ import assignment2.Piece;
 import assignment2.Player;
 import assignment2.Position;
 import assignment2.Square;
+
+import assignment2.util.Assignment2Validator;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -147,6 +152,14 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 		// Initialize created meta-data
 		theAssignment2Package.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put(theAssignment2Package, new EValidator.Descriptor() {
+			@Override
+			public EValidator getEValidator() {
+				return Assignment2Validator.INSTANCE;
+			}
+		});
+
 		// Mark meta-data to indicate it can't be changed
 		theAssignment2Package.freeze();
 
@@ -171,7 +184,7 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	 * @generated
 	 */
 	@Override
-	public EReference getGame_Player() {
+	public EReference getGame_Players() {
 		return (EReference) gameEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -223,6 +236,16 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	@Override
 	public EOperation getGame__UpdateElo() {
 		return gameEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getGame__TwoPlayers__DiagnosticChain_Map() {
+		return gameEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -291,8 +314,8 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	 * @generated
 	 */
 	@Override
-	public EAttribute getBoard_Size() {
-		return (EAttribute) boardEClass.getEStructuralFeatures().get(1);
+	public EReference getBoard_Square() {
+		return (EReference) boardEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -301,8 +324,8 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	 * @generated
 	 */
 	@Override
-	public EReference getBoard_Square() {
-		return (EReference) boardEClass.getEStructuralFeatures().get(0);
+	public EAttribute getBoard_Size() {
+		return (EAttribute) boardEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -323,6 +346,16 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	@Override
 	public EOperation getBoard__Movepiece() {
 		return boardEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getBoard__MinSize__DiagnosticChain_Map() {
+		return boardEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -431,8 +464,8 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	 * @generated
 	 */
 	@Override
-	public EReference getSquare_Position() {
-		return (EReference) squareEClass.getEStructuralFeatures().get(1);
+	public EReference getSquare_Gamepiece() {
+		return (EReference) squareEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -441,8 +474,8 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 	 * @generated
 	 */
 	@Override
-	public EReference getSquare_Gamepiece() {
-		return (EReference) squareEClass.getEStructuralFeatures().get(0);
+	public EReference getSquare_Position() {
+		return (EReference) squareEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -546,12 +579,13 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 
 		// Create classes and their features
 		gameEClass = createEClass(GAME);
-		createEReference(gameEClass, GAME__PLAYER);
+		createEReference(gameEClass, GAME__PLAYERS);
 		createEReference(gameEClass, GAME__BOARD);
 		createEAttribute(gameEClass, GAME__TIME);
 		createEOperation(gameEClass, GAME___GET_WHITE_POINTS);
 		createEOperation(gameEClass, GAME___GET_BLACK_POINTS);
 		createEOperation(gameEClass, GAME___UPDATE_ELO);
+		createEOperation(gameEClass, GAME___TWO_PLAYERS__DIAGNOSTICCHAIN_MAP);
 
 		playerEClass = createEClass(PLAYER);
 		createEReference(playerEClass, PLAYER__LOADOUT);
@@ -564,6 +598,7 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 		createEAttribute(boardEClass, BOARD__SIZE);
 		createEOperation(boardEClass, BOARD___POPULATE_BOARD);
 		createEOperation(boardEClass, BOARD___MOVEPIECE);
+		createEOperation(boardEClass, BOARD___MIN_SIZE__DIAGNOSTICCHAIN_MAP);
 
 		pieceEClass = createEClass(PIECE);
 		createEAttribute(pieceEClass, PIECE__TYPE);
@@ -623,22 +658,32 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(gameEClass, Game.class, "Game", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGame_Player(), this.getPlayer(), null, "player", null, 2, 2, Game.class, !IS_TRANSIENT,
+		initEReference(getGame_Players(), this.getPlayer(), null, "players", null, 2, 2, Game.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getGame_Board(), this.getBoard(), null, "board", null, 1, 1, Game.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getGame_Time(), ecorePackage.getEInt(), "time", null, 0, 1, Game.class, !IS_TRANSIENT,
+		initEAttribute(getGame_Time(), ecorePackage.getEInt(), "time", null, 1, 1, Game.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getGame__GetWhitePoints(), ecorePackage.getEInt(), "getWhitePoints", 0, 1, IS_UNIQUE,
+		initEOperation(getGame__GetWhitePoints(), ecorePackage.getEInt(), "getWhitePoints", 1, 1, IS_UNIQUE,
 				IS_ORDERED);
 
-		initEOperation(getGame__GetBlackPoints(), ecorePackage.getEInt(), "getBlackPoints", 0, 1, IS_UNIQUE,
+		initEOperation(getGame__GetBlackPoints(), ecorePackage.getEInt(), "getBlackPoints", 1, 1, IS_UNIQUE,
 				IS_ORDERED);
 
 		initEOperation(getGame__UpdateElo(), null, "updateElo", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		EOperation op = initEOperation(getGame__TwoPlayers__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
+				"twoPlayers", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(playerEClass, Player.class, "Player", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPlayer_Loadout(), this.getLoadout(), null, "loadout", null, 1, 1, Player.class, !IS_TRANSIENT,
@@ -646,7 +691,7 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 				IS_ORDERED);
 		initEAttribute(getPlayer_Name(), ecorePackage.getEString(), "name", null, 0, 1, Player.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlayer_EloRating(), ecorePackage.getEInt(), "eloRating", null, 0, 1, Player.class,
+		initEAttribute(getPlayer_EloRating(), ecorePackage.getEInt(), "eloRating", null, 1, 1, Player.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlayer_Settings(), ecorePackage.getEString(), "settings", null, 0, 1, Player.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -655,17 +700,27 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 		initEReference(getBoard_Square(), this.getSquare(), null, "square", null, 16, -1, Board.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getBoard_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Board.class, !IS_TRANSIENT,
+		initEAttribute(getBoard_Size(), ecorePackage.getEInt(), "size", null, 1, 1, Board.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getBoard__PopulateBoard(), null, "populateBoard", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getBoard__Movepiece(), null, "movepiece", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getBoard__MinSize__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "minSize", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(pieceEClass, Piece.class, "Piece", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPiece_Type(), ecorePackage.getEString(), "type", null, 0, 1, Piece.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPiece_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Piece.class, !IS_TRANSIENT,
+		initEAttribute(getPiece_Value(), ecorePackage.getEInt(), "value", null, 1, 1, Piece.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(loadoutEClass, Loadout.class, "Loadout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -692,7 +747,7 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getSquare__IsOcupied(), ecorePackage.getEBoolean(), "isOcupied", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSquare__IsOcupied(), ecorePackage.getEBoolean(), "isOcupied", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(gamePieceEClass, GamePiece.class, "GamePiece", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -704,29 +759,45 @@ public class Assignment2PackageImpl extends EPackageImpl implements Assignment2P
 
 		initEClass(positionEClass, Position.class, "Position", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPosition_X(), ecorePackage.getEInt(), "x", null, 0, 1, Position.class, !IS_TRANSIENT,
+		initEAttribute(getPosition_X(), ecorePackage.getEInt(), "x", null, 1, 1, Position.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPosition_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Position.class, !IS_TRANSIENT,
+		initEAttribute(getPosition_Y(), ecorePackage.getEInt(), "y", null, 1, 1, Position.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
 	}
 
 	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
-		addAnnotation(gameEClass, source, new String[] { "2players", "self.players->size() = 2" });
-		addAnnotation(boardEClass, source, new String[] { "minSize", "self.size > 7" });
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation(this, source, new String[] {});
+		addAnnotation(gameEClass, source, new String[] { "constraints", "twoPlayers" });
+		addAnnotation(boardEClass, source, new String[] { "constraints", "minSize" });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
+		addAnnotation(getGame__TwoPlayers__DiagnosticChain_Map(), source,
+				new String[] { "body", "self.players->size() = 2" });
+		addAnnotation(getBoard__MinSize__DiagnosticChain_Map(), source, new String[] { "body", "self.size > 7" });
 	}
 
 } //Assignment2PackageImpl

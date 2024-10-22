@@ -53,7 +53,7 @@ public class GameItemProvider extends ItemProviderAdapter implements IEditingDom
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPlayerPropertyDescriptor(object);
+			addPlayersPropertyDescriptor(object);
 			addBoardPropertyDescriptor(object);
 			addTimePropertyDescriptor(object);
 		}
@@ -61,17 +61,17 @@ public class GameItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	/**
-	 * This adds a property descriptor for the Player feature.
+	 * This adds a property descriptor for the Players feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPlayerPropertyDescriptor(Object object) {
+	protected void addPlayersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Game_player_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Game_player_feature", "_UI_Game_type"),
-						Assignment2Package.Literals.GAME__PLAYER, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Game_players_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Game_players_feature", "_UI_Game_type"),
+						Assignment2Package.Literals.GAME__PLAYERS, true, false, true, null, null, null));
 	}
 
 	/**

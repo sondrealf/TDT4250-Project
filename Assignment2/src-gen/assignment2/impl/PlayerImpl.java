@@ -5,6 +5,7 @@ package assignment2.impl;
 import assignment2.Assignment2Package;
 import assignment2.Loadout;
 import assignment2.Player;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;

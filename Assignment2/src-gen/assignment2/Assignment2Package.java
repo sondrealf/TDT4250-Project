@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see assignment2.Assignment2Factory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore"
  * @generated
  */
 public interface Assignment2Package extends EPackage {
@@ -68,13 +69,13 @@ public interface Assignment2Package extends EPackage {
 	int GAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Player</b></em>' reference list.
+	 * The feature id for the '<em><b>Players</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME__PLAYER = 0;
+	int GAME__PLAYERS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Board</b></em>' reference.
@@ -131,13 +132,22 @@ public interface Assignment2Package extends EPackage {
 	int GAME___UPDATE_ELO = 2;
 
 	/**
+	 * The operation id for the '<em>Two Players</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME___TWO_PLAYERS__DIAGNOSTICCHAIN_MAP = 3;
+
+	/**
 	 * The number of operations of the '<em>Game</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_OPERATION_COUNT = 3;
+	int GAME_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link assignment2.impl.PlayerImpl <em>Player</em>}' class.
@@ -259,13 +269,22 @@ public interface Assignment2Package extends EPackage {
 	int BOARD___MOVEPIECE = 1;
 
 	/**
+	 * The operation id for the '<em>Min Size</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOARD___MIN_SIZE__DIAGNOSTICCHAIN_MAP = 2;
+
+	/**
 	 * The number of operations of the '<em>Board</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOARD_OPERATION_COUNT = 2;
+	int BOARD_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link assignment2.impl.PieceImpl <em>Piece</em>}' class.
@@ -563,15 +582,15 @@ public interface Assignment2Package extends EPackage {
 	EClass getGame();
 
 	/**
-	 * Returns the meta object for the reference list '{@link assignment2.Game#getPlayer <em>Player</em>}'.
+	 * Returns the meta object for the reference list '{@link assignment2.Game#getPlayers <em>Players</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Player</em>'.
-	 * @see assignment2.Game#getPlayer()
+	 * @return the meta object for the reference list '<em>Players</em>'.
+	 * @see assignment2.Game#getPlayers()
 	 * @see #getGame()
 	 * @generated
 	 */
-	EReference getGame_Player();
+	EReference getGame_Players();
 
 	/**
 	 * Returns the meta object for the reference '{@link assignment2.Game#getBoard <em>Board</em>}'.
@@ -624,6 +643,16 @@ public interface Assignment2Package extends EPackage {
 	 * @generated
 	 */
 	EOperation getGame__UpdateElo();
+
+	/**
+	 * Returns the meta object for the '{@link assignment2.Game#twoPlayers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Two Players</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Two Players</em>' operation.
+	 * @see assignment2.Game#twoPlayers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getGame__TwoPlayers__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link assignment2.Player <em>Player</em>}'.
@@ -690,17 +719,6 @@ public interface Assignment2Package extends EPackage {
 	EClass getBoard();
 
 	/**
-	 * Returns the meta object for the attribute '{@link assignment2.Board#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see assignment2.Board#getSize()
-	 * @see #getBoard()
-	 * @generated
-	 */
-	EAttribute getBoard_Size();
-
-	/**
 	 * Returns the meta object for the reference list '{@link assignment2.Board#getSquare <em>Square</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -710,6 +728,17 @@ public interface Assignment2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getBoard_Square();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment2.Board#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see assignment2.Board#getSize()
+	 * @see #getBoard()
+	 * @generated
+	 */
+	EAttribute getBoard_Size();
 
 	/**
 	 * Returns the meta object for the '{@link assignment2.Board#populateBoard() <em>Populate Board</em>}' operation.
@@ -730,6 +759,16 @@ public interface Assignment2Package extends EPackage {
 	 * @generated
 	 */
 	EOperation getBoard__Movepiece();
+
+	/**
+	 * Returns the meta object for the '{@link assignment2.Board#minSize(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Min Size</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Min Size</em>' operation.
+	 * @see assignment2.Board#minSize(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getBoard__MinSize__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link assignment2.Piece <em>Piece</em>}'.
@@ -837,17 +876,6 @@ public interface Assignment2Package extends EPackage {
 	EClass getSquare();
 
 	/**
-	 * Returns the meta object for the reference '{@link assignment2.Square#getPosition <em>Position</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Position</em>'.
-	 * @see assignment2.Square#getPosition()
-	 * @see #getSquare()
-	 * @generated
-	 */
-	EReference getSquare_Position();
-
-	/**
 	 * Returns the meta object for the reference '{@link assignment2.Square#getGamepiece <em>Gamepiece</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -857,6 +885,17 @@ public interface Assignment2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getSquare_Gamepiece();
+
+	/**
+	 * Returns the meta object for the reference '{@link assignment2.Square#getPosition <em>Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Position</em>'.
+	 * @see assignment2.Square#getPosition()
+	 * @see #getSquare()
+	 * @generated
+	 */
+	EReference getSquare_Position();
 
 	/**
 	 * Returns the meta object for the '{@link assignment2.Square#isOcupied() <em>Is Ocupied</em>}' operation.
@@ -966,12 +1005,12 @@ public interface Assignment2Package extends EPackage {
 		EClass GAME = eINSTANCE.getGame();
 
 		/**
-		 * The meta object literal for the '<em><b>Player</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Players</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GAME__PLAYER = eINSTANCE.getGame_Player();
+		EReference GAME__PLAYERS = eINSTANCE.getGame_Players();
 
 		/**
 		 * The meta object literal for the '<em><b>Board</b></em>' reference feature.
@@ -1012,6 +1051,14 @@ public interface Assignment2Package extends EPackage {
 		 * @generated
 		 */
 		EOperation GAME___UPDATE_ELO = eINSTANCE.getGame__UpdateElo();
+
+		/**
+		 * The meta object literal for the '<em><b>Two Players</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GAME___TWO_PLAYERS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getGame__TwoPlayers__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link assignment2.impl.PlayerImpl <em>Player</em>}' class.
@@ -1066,20 +1113,20 @@ public interface Assignment2Package extends EPackage {
 		EClass BOARD = eINSTANCE.getBoard();
 
 		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOARD__SIZE = eINSTANCE.getBoard_Size();
-
-		/**
 		 * The meta object literal for the '<em><b>Square</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference BOARD__SQUARE = eINSTANCE.getBoard_Square();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOARD__SIZE = eINSTANCE.getBoard_Size();
 
 		/**
 		 * The meta object literal for the '<em><b>Populate Board</b></em>' operation.
@@ -1096,6 +1143,14 @@ public interface Assignment2Package extends EPackage {
 		 * @generated
 		 */
 		EOperation BOARD___MOVEPIECE = eINSTANCE.getBoard__Movepiece();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Size</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOARD___MIN_SIZE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getBoard__MinSize__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link assignment2.impl.PieceImpl <em>Piece</em>}' class.
@@ -1186,20 +1241,20 @@ public interface Assignment2Package extends EPackage {
 		EClass SQUARE = eINSTANCE.getSquare();
 
 		/**
-		 * The meta object literal for the '<em><b>Position</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SQUARE__POSITION = eINSTANCE.getSquare_Position();
-
-		/**
 		 * The meta object literal for the '<em><b>Gamepiece</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference SQUARE__GAMEPIECE = eINSTANCE.getSquare_Gamepiece();
+
+		/**
+		 * The meta object literal for the '<em><b>Position</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SQUARE__POSITION = eINSTANCE.getSquare_Position();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Ocupied</b></em>' operation.

@@ -51,7 +51,7 @@ public interface Piece extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(int)
 	 * @see assignment2.Assignment2Package#getPiece_Value()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getValue();

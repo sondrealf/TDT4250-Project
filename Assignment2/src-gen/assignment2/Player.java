@@ -75,7 +75,7 @@ public interface Player extends EObject {
 	 * @return the value of the '<em>Elo Rating</em>' attribute.
 	 * @see #setEloRating(int)
 	 * @see assignment2.Assignment2Package#getPlayer_EloRating()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getEloRating();

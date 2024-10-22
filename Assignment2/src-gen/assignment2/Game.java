@@ -2,6 +2,9 @@
  */
 package assignment2;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -15,27 +18,27 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link assignment2.Game#getPlayer <em>Player</em>}</li>
+ *   <li>{@link assignment2.Game#getPlayers <em>Players</em>}</li>
  *   <li>{@link assignment2.Game#getBoard <em>Board</em>}</li>
  *   <li>{@link assignment2.Game#getTime <em>Time</em>}</li>
  * </ul>
  *
  * @see assignment2.Assignment2Package#getGame()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL 2players='self.players-&gt;size() = 2'"
- * @generated sss
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='twoPlayers'"
+ * @generated
  */
 public interface Game extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Player</b></em>' reference list.
+	 * Returns the value of the '<em><b>Players</b></em>' reference list.
 	 * The list contents are of type {@link assignment2.Player}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Player</em>' reference list.
-	 * @see assignment2.Assignment2Package#getGame_Player()
+	 * @return the value of the '<em>Players</em>' reference list.
+	 * @see assignment2.Assignment2Package#getGame_Players()
 	 * @model lower="2" upper="2"
 	 * @generated
 	 */
-	EList<Player> getPlayer();
+	EList<Player> getPlayers();
 
 	/**
 	 * Returns the value of the '<em><b>Board</b></em>' reference.
@@ -66,7 +69,7 @@ public interface Game extends EObject {
 	 * @return the value of the '<em>Time</em>' attribute.
 	 * @see #setTime(int)
 	 * @see assignment2.Assignment2Package#getGame_Time()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getTime();
@@ -84,7 +87,7 @@ public interface Game extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model kind="operation" required="true"
 	 * @generated
 	 */
 	int getWhitePoints();
@@ -92,7 +95,7 @@ public interface Game extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model kind="operation" required="true"
 	 * @generated
 	 */
 	int getBlackPoints();
@@ -104,5 +107,13 @@ public interface Game extends EObject {
 	 * @generated
 	 */
 	void updateElo();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.players-&gt;size() = 2'"
+	 * @generated
+	 */
+	boolean twoPlayers(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Game

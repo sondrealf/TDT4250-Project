@@ -29,7 +29,7 @@ public interface Position extends EObject {
 	 * @return the value of the '<em>X</em>' attribute.
 	 * @see #setX(int)
 	 * @see assignment2.Assignment2Package#getPosition_X()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getX();
@@ -51,7 +51,7 @@ public interface Position extends EObject {
 	 * @return the value of the '<em>Y</em>' attribute.
 	 * @see #setY(int)
 	 * @see assignment2.Assignment2Package#getPosition_Y()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getY();

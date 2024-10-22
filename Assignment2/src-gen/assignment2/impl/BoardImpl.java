@@ -3,19 +3,41 @@
 package assignment2.impl;
 
 import assignment2.Assignment2Package;
+import assignment2.Assignment2Tables;
 import assignment2.Board;
 import assignment2.Square;
+
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import org.eclipse.ocl.pivot.evaluation.Executor;
+
+import org.eclipse.ocl.pivot.ids.TypeId;
+
+import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+
+import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +109,19 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 	 * @generated
 	 */
 	@Override
+	public EList<Square> getSquare() {
+		if (square == null) {
+			square = new EObjectResolvingEList<Square>(Square.class, this, Assignment2Package.BOARD__SQUARE);
+		}
+		return square;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public int getSize() {
 		return size;
 	}
@@ -110,23 +145,8 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 	 * @generated
 	 */
 	@Override
-	public EList<Square> getSquare() {
-		if (square == null) {
-			square = new EObjectResolvingEList<Square>(Square.class, this, Assignment2Package.BOARD__SQUARE);
-		}
-		return square;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public void populateBoard() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/assignment2!Board!populateBoard()
 	}
 
 	/**
@@ -136,9 +156,54 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 	 */
 	@Override
 	public void movepiece() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/assignment2!Board!movepiece()
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean minSize(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Board::minSize";
+		try {
+			/**
+			 *
+			 * inv minSize:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[1] = self.size > 7
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
+					Assignment2Package.Literals.BOARD___MIN_SIZE__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
+					.evaluate(executor, severity_0, Assignment2Tables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean IF_le;
+			if (le) {
+				IF_le = true;
+			} else {
+				final /*@NonInvalid*/ int size = this.getSize();
+				final /*@NonInvalid*/ IntegerValue BOXED_size = ValueUtil.integerValueOf(size);
+				final /*@NonInvalid*/ boolean result = OclComparableGreaterThanOperation.INSTANCE
+						.evaluate(executor, BOXED_size, Assignment2Tables.INT_7).booleanValue();
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE
+						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
+								(Object) null, severity_0, result, Assignment2Tables.INT_0)
+						.booleanValue();
+				IF_le = logDiagnostic;
+			}
+			return IF_le;
+		} catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
 	}
 
 	/**
@@ -217,6 +282,7 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case Assignment2Package.BOARD___POPULATE_BOARD:
@@ -225,6 +291,8 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 		case Assignment2Package.BOARD___MOVEPIECE:
 			movepiece();
 			return null;
+		case Assignment2Package.BOARD___MIN_SIZE__DIAGNOSTICCHAIN_MAP:
+			return minSize((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

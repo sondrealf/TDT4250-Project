@@ -8,9 +8,11 @@ import assignment2.Position;
 import assignment2.Square;
 
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -77,48 +79,6 @@ public class SquareImpl extends MinimalEObjectImpl.Container implements Square {
 	 * @generated
 	 */
 	@Override
-	public Position getPosition() {
-		if (position != null && position.eIsProxy()) {
-			InternalEObject oldPosition = (InternalEObject) position;
-			position = (Position) eResolveProxy(oldPosition);
-			if (position != oldPosition) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Assignment2Package.SQUARE__POSITION,
-							oldPosition, position));
-			}
-		}
-		return position;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Position basicGetPosition() {
-		return position;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPosition(Position newPosition) {
-		Position oldPosition = position;
-		position = newPosition;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Assignment2Package.SQUARE__POSITION, oldPosition,
-					position));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public GamePiece getGamepiece() {
 		if (gamepiece != null && gamepiece.eIsProxy()) {
 			InternalEObject oldGamepiece = (InternalEObject) gamepiece;
@@ -161,10 +121,50 @@ public class SquareImpl extends MinimalEObjectImpl.Container implements Square {
 	 * @generated
 	 */
 	@Override
+	public Position getPosition() {
+		if (position != null && position.eIsProxy()) {
+			InternalEObject oldPosition = (InternalEObject) position;
+			position = (Position) eResolveProxy(oldPosition);
+			if (position != oldPosition) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Assignment2Package.SQUARE__POSITION,
+							oldPosition, position));
+			}
+		}
+		return position;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Position basicGetPosition() {
+		return position;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPosition(Position newPosition) {
+		Position oldPosition = position;
+		position = newPosition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Assignment2Package.SQUARE__POSITION, oldPosition,
+					position));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean isOcupied() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/assignment2!Square!isOcupied()
 	}
 
 	/**

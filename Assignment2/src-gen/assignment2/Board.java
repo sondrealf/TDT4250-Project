@@ -2,6 +2,9 @@
  */
 package assignment2;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -20,10 +23,22 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see assignment2.Assignment2Package#getBoard()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL minSize='self.size &gt; 7'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='minSize'"
  * @generated
  */
 public interface Board extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Square</b></em>' reference list.
+	 * The list contents are of type {@link assignment2.Square}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Square</em>' reference list.
+	 * @see assignment2.Assignment2Package#getBoard_Square()
+	 * @model lower="16"
+	 * @generated
+	 */
+	EList<Square> getSquare();
+
 	/**
 	 * Returns the value of the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,7 +46,7 @@ public interface Board extends EObject {
 	 * @return the value of the '<em>Size</em>' attribute.
 	 * @see #setSize(int)
 	 * @see assignment2.Assignment2Package#getBoard_Size()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getSize();
@@ -45,18 +60,6 @@ public interface Board extends EObject {
 	 * @generated
 	 */
 	void setSize(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Square</b></em>' reference list.
-	 * The list contents are of type {@link assignment2.Square}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Square</em>' reference list.
-	 * @see assignment2.Assignment2Package#getBoard_Square()
-	 * @model lower="16"
-	 * @generated
-	 */
-	EList<Square> getSquare();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,5 +76,13 @@ public interface Board extends EObject {
 	 * @generated
 	 */
 	void movepiece();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.size &gt; 7'"
+	 * @generated
+	 */
+	boolean minSize(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Board

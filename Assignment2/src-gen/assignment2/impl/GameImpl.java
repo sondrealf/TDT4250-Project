@@ -3,17 +3,20 @@
 package assignment2.impl;
 
 import assignment2.Assignment2Package;
+import assignment2.Assignment2Tables;
 import assignment2.Board;
 import assignment2.Game;
 import assignment2.Player;
-import assignment2.Square;
 
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -24,6 +27,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.eclipse.ocl.pivot.evaluation.Executor;
+
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.ids.TypeId;
+
+import org.eclipse.ocl.pivot.library.collection.CollectionSizeOperation;
+
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.OrderedSetValue;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Game</b></em>'.
@@ -32,7 +53,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link assignment2.impl.GameImpl#getPlayer <em>Player</em>}</li>
+ *   <li>{@link assignment2.impl.GameImpl#getPlayers <em>Players</em>}</li>
  *   <li>{@link assignment2.impl.GameImpl#getBoard <em>Board</em>}</li>
  *   <li>{@link assignment2.impl.GameImpl#getTime <em>Time</em>}</li>
  * </ul>
@@ -41,14 +62,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	/**
-	 * The cached value of the '{@link #getPlayer() <em>Player</em>}' reference list.
+	 * The cached value of the '{@link #getPlayers() <em>Players</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPlayer()
+	 * @see #getPlayers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Player> player;
+	protected EList<Player> players;
 
 	/**
 	 * The cached value of the '{@link #getBoard() <em>Board</em>}' reference.
@@ -105,11 +126,11 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @generated
 	 */
 	@Override
-	public EList<Player> getPlayer() {
-		if (player == null) {
-			player = new EObjectResolvingEList<Player>(Player.class, this, Assignment2Package.GAME__PLAYER);
+	public EList<Player> getPlayers() {
+		if (players == null) {
+			players = new EObjectResolvingEList<Player>(Player.class, this, Assignment2Package.GAME__PLAYERS);
 		}
-		return player;
+		return players;
 	}
 
 	/**
@@ -179,43 +200,21 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public int getWhitePoints() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		int whitePoints = 0;
-		for (Square square : this.getBoard().getSquare()) {
-			if (square.isOcupied()) {
-				if (square.getGamepiece().getColor().equals("white")) {
-					whitePoints += square.getGamepiece().getPiece().getValue();
-				}
-			}
-		}
-		return whitePoints;
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/assignment2!Game!getWhitePoints()
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public int getBlackPoints() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		int blackPoints = 0;
-		for (Square square : this.getBoard().getSquare()) {
-			if (square.isOcupied()) {
-				if (square.getGamepiece().getColor().equals("white")) {
-					blackPoints += square.getGamepiece().getPiece().getValue();
-				}
-			}
-		}
-		return blackPoints;
-	}
-
-	public boolean validateTwoPlayers() {
-		return this.getPlayer() != null && this.getPlayer().size() == 2;
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/assignment2!Game!getBlackPoints()
 	}
 
 	/**
@@ -225,9 +224,56 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 */
 	@Override
 	public void updateElo() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/assignment2!Game!updateElo()
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean twoPlayers(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Game::twoPlayers";
+		try {
+			/**
+			 *
+			 * inv twoPlayers:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[1] = self.players->size() = 2
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
+			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
+					Assignment2Package.Literals.GAME___TWO_PLAYERS__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
+					.evaluate(executor, severity_0, Assignment2Tables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean IF_le;
+			if (le) {
+				IF_le = true;
+			} else {
+				final /*@NonInvalid*/ List<Player> players = this.getPlayers();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_players = idResolver
+						.createOrderedSetOfAll(Assignment2Tables.ORD_CLSSid_Player, players);
+				final /*@NonInvalid*/ IntegerValue size = CollectionSizeOperation.INSTANCE.evaluate(BOXED_players);
+				final /*@NonInvalid*/ boolean result = size.equals(Assignment2Tables.INT_2);
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE
+						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
+								(Object) null, severity_0, result, Assignment2Tables.INT_0)
+						.booleanValue();
+				IF_le = logDiagnostic;
+			}
+			return IF_le;
+		} catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
 	}
 
 	/**
@@ -238,8 +284,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Assignment2Package.GAME__PLAYER:
-			return getPlayer();
+		case Assignment2Package.GAME__PLAYERS:
+			return getPlayers();
 		case Assignment2Package.GAME__BOARD:
 			if (resolve)
 				return getBoard();
@@ -259,9 +305,9 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Assignment2Package.GAME__PLAYER:
-			getPlayer().clear();
-			getPlayer().addAll((Collection<? extends Player>) newValue);
+		case Assignment2Package.GAME__PLAYERS:
+			getPlayers().clear();
+			getPlayers().addAll((Collection<? extends Player>) newValue);
 			return;
 		case Assignment2Package.GAME__BOARD:
 			setBoard((Board) newValue);
@@ -281,8 +327,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Assignment2Package.GAME__PLAYER:
-			getPlayer().clear();
+		case Assignment2Package.GAME__PLAYERS:
+			getPlayers().clear();
 			return;
 		case Assignment2Package.GAME__BOARD:
 			setBoard((Board) null);
@@ -302,8 +348,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Assignment2Package.GAME__PLAYER:
-			return player != null && !player.isEmpty();
+		case Assignment2Package.GAME__PLAYERS:
+			return players != null && !players.isEmpty();
 		case Assignment2Package.GAME__BOARD:
 			return board != null;
 		case Assignment2Package.GAME__TIME:
@@ -318,6 +364,7 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case Assignment2Package.GAME___GET_WHITE_POINTS:
@@ -327,6 +374,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 		case Assignment2Package.GAME___UPDATE_ELO:
 			updateElo();
 			return null;
+		case Assignment2Package.GAME___TWO_PLAYERS__DIAGNOSTICCHAIN_MAP:
+			return twoPlayers((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

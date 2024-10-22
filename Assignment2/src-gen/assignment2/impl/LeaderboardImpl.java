@@ -5,7 +5,9 @@ package assignment2.impl;
 import assignment2.Assignment2Package;
 import assignment2.Leaderboard;
 import assignment2.Player;
+
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
@@ -79,9 +81,7 @@ public class LeaderboardImpl extends MinimalEObjectImpl.Container implements Lea
 	 */
 	@Override
 	public String listProfiles() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/assignment2!Leaderboard!listProfiles()
 	}
 
 	/**
