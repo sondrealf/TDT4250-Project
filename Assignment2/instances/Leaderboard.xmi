@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<assignment2:Leaderboard
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:assignment2="http://www.example.org/assignment2">
-  <player href="Player.xmi#/"/>
-</assignment2:Leaderboard>
