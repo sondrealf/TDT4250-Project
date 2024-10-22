@@ -29,10 +29,6 @@
       <genOperations ecoreOperation="assignment2.ecore#//Board/populateBoard"/>
       <genOperations ecoreOperation="assignment2.ecore#//Board/movepiece"/>
     </genClasses>
-    <genClasses ecoreClass="assignment2.ecore#//Piece">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Piece/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Piece/value"/>
-    </genClasses>
     <genClasses ecoreClass="assignment2.ecore#//Loadout">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Loadout/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//Loadout/piece"/>
@@ -42,17 +38,28 @@
       <genOperations ecoreOperation="assignment2.ecore#//Leaderboard/listProfiles"/>
     </genClasses>
     <genClasses ecoreClass="assignment2.ecore#//Square">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//Square/gamepiece"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//Square/position"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//Square/gamepiece"/>
       <genOperations ecoreOperation="assignment2.ecore#//Square/isOcupied"/>
-    </genClasses>
-    <genClasses ecoreClass="assignment2.ecore#//GamePiece">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//GamePiece/color"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//GamePiece/piece"/>
     </genClasses>
     <genClasses ecoreClass="assignment2.ecore#//Position">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Position/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Position/y"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Rook"/>
+    <genClasses ecoreClass="assignment2.ecore#//Pawn"/>
+    <genClasses image="false" ecoreClass="assignment2.ecore#//Piece">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Piece/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Piece/moveStrategy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Piece/blackImgUrl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Piece/whitekImgUrl"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Medic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Medic/abillity"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="assignment2.ecore#//GamePiece">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//GamePiece/color"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//GamePiece/piece"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
